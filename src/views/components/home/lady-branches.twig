@@ -1,0 +1,68 @@
+{#
+| Variable                          | Type       | Description                                         |
+|-----------------------------------|------------|-----------------------------------------------------|
+| component.title                   | string     | Heading                                             |
+| component.branches                | object[]   | List of branches (name, address, hours, phone, map) |
+| position                          | int        | Block position                                      |
+#}
+<section data-testid="store-home-lady-branches" class="s-block lady-branches-section container">
+    <div class="section-header text-center mb-12">
+        <h2 class="text-3xl font-extrabold text-gray-900 mb-2">{{ component.title|default('فروعنا ومعارضنا') }}</h2>
+        <p class="text-gray-500 text-sm">يسعدنا استقبالكم في معارضنا الفاخرة لتجربة تسوق راقية تلبي تطلعاتكم.</p>
+    </div>
+
+    <div class="branches-grid">
+        {% if component.branches|length %}
+            {% for branch in component.branches %}
+                <div class="branch-card">
+                    <div class="branch-icon"><i class="sicon-store"></i></div>
+                    <h3>{{ branch.name }}</h3>
+                    <div class="info-row"><i class="sicon-location"></i> <span>{{ branch.address }}</span></div>
+                    <div class="info-row"><i class="sicon-clock"></i> <span>{{ branch.hours }}</span></div>
+                    <div class="info-row"><i class="sicon-phone"></i> <span>{{ branch.phone }}</span></div>
+                    <a href="{{ branch.map_url|default('#') }}" target="_blank" class="map-link">
+                        <span>عرض الموقع على خرائط جوجل</span>
+                        <i class="sicon-arrow-left text-xs rtl:rotate-180"></i>
+                    </a>
+                </div>
+            {% endfor %}
+        {% else %}
+            <!-- Default 3 Branches -->
+            <div class="branch-card">
+                <div class="branch-icon"><i class="sicon-store"></i></div>
+                <h3>فرع الرياض - التحلية</h3>
+                <div class="info-row"><i class="sicon-location"></i> <span>طريق الأمير محمد بن عبدالعزيز (التحلية)، مقابل سنتريا مول</span></div>
+                <div class="info-row"><i class="sicon-clock"></i> <span>يومياً: من 4:00 عصراً حتى 11:30 مساءً</span></div>
+                <div class="info-row"><i class="sicon-phone"></i> <span>+966 50 123 4567</span></div>
+                <a href="https://maps.google.com" target="_blank" class="map-link">
+                    <span>عرض الموقع على خرائط جوجل</span>
+                    <i class="sicon-arrow-left text-xs rtl:rotate-180"></i>
+                </a>
+            </div>
+
+            <div class="branch-card">
+                <div class="branch-icon"><i class="sicon-store"></i></div>
+                <h3>فرع جدة - الروضة</h3>
+                <div class="info-row"><i class="sicon-location"></i> <span>شارع عبدالمقصود خوجة، حي الروضة</span></div>
+                <div class="info-row"><i class="sicon-clock"></i> <span>يومياً: من 4:30 عصراً حتى 11:30 مساءً</span></div>
+                <div class="info-row"><i class="sicon-phone"></i> <span>+966 50 987 6543</span></div>
+                <a href="https://maps.google.com" target="_blank" class="map-link">
+                    <span>عرض الموقع على خرائط جوجل</span>
+                    <i class="sicon-arrow-left text-xs rtl:rotate-180"></i>
+                </a>
+            </div>
+
+            <div class="branch-card">
+                <div class="branch-icon"><i class="sicon-store"></i></div>
+                <h3>فرع الخبر - الراكة</h3>
+                <div class="info-row"><i class="sicon-location"></i> <span>طريق الملك فيصل، مجمع الراكة التجاري</span></div>
+                <div class="info-row"><i class="sicon-clock"></i> <span>يومياً: من 4:00 عصراً حتى 11:00 مساءً</span></div>
+                <div class="info-row"><i class="sicon-phone"></i> <span>+966 50 555 4321</span></div>
+                <a href="https://maps.google.com" target="_blank" class="map-link">
+                    <span>عرض الموقع على خرائط جوجل</span>
+                    <i class="sicon-arrow-left text-xs rtl:rotate-180"></i>
+                </a>
+            </div>
+        {% endif %}
+    </div>
+</section>

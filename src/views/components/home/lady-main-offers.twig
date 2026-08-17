@@ -1,0 +1,25 @@
+{#
+| Variable                          | Type       | Description                                         |
+|-----------------------------------|------------|-----------------------------------------------------|
+| component.badge                   | string     | Badge text (e.g. "عروض حصرية")                      |
+| component.title                   | string     | Main headline                                       |
+| component.description             | string     | Subtitle                                            |
+| component.btn_text                | string     | CTA button text                                     |
+| component.btn_url                 | string     | CTA button URL                                      |
+| component.bg_image                | string     | Background photo                                    |
+| position                          | int        | Block position                                      |
+#}
+<section data-testid="store-home-lady-main-offers" class="s-block lady-main-offers container">
+    <div class="main-offer-card group">
+        <img src="{{ component.bg_image|default('https://cdn.salla.sa/ZrBEO/MopzhoqpTkDObcKc8Q8n77AuydanfsGXdZO7iinH.jpg') }}" alt="{{ component.title }}" class="banner-bg" loading="lazy" />
+        <div class="offer-overlay text-start">
+            <span class="offer-badge">{{ component.badge|default('عروض الموسم الفاخرة') }}</span>
+            <h2>{{ component.title|default('تألقي بأحدث تشكيلات الموسم بخصم يصل إلى 40%') }}</h2>
+            <p>{{ component.description|default('تشكيلة استثنائية من العبايات والمجوهرات ومستحضرات التجميل المختارة لتمنحك إطلالة فريدة.') }}</p>
+            <a href="{{ component.btn_url|default('/offers') }}" class="btn btn--primary btn--rounded-full px-8 py-3.5 text-base font-bold shadow-lg shadow-primary/25 hover:shadow-primary/45 transition-all">
+                {{ component.btn_text|default('تسوقي العروض الآن') }}
+                <i class="sicon-arrow-left text-sm mr-2 rtl:rotate-180"></i>
+            </a>
+        </div>
+    </div>
+</section>

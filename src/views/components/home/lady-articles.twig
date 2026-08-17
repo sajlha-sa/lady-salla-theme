@@ -1,0 +1,80 @@
+{#
+| Variable                          | Type       | Description                                         |
+|-----------------------------------|------------|-----------------------------------------------------|
+| component.title                   | string     | Heading                                             |
+| component.articles                | object[]   | List of articles (title, summary, image, date, url) |
+| position                          | int        | Block position                                      |
+#}
+<section data-testid="store-home-lady-articles" class="s-block lady-articles-section container">
+    <div class="section-header text-center mb-12">
+        <h2 class="text-3xl font-extrabold text-gray-900 mb-2">{{ component.title|default('المجلة ونقاط الأناقة') }}</h2>
+        <p class="text-gray-500 text-sm">نصائح حصرية في تنسيق الأزياء، أسرار العناية بالبشرة، وأحدث صيحات الموضة.</p>
+    </div>
+
+    <div class="articles-grid">
+        {% if component.articles|length %}
+            {% for art in component.articles %}
+                <div class="article-card">
+                    <div class="article-img">
+                        <img src="{{ art.image|default('https://cdn.salla.sa/ZrBEO/MopzhoqpTkDObcKc8Q8n77AuydanfsGXdZO7iinH.jpg') }}" alt="{{ art.title }}" loading="lazy" />
+                    </div>
+                    <div class="article-body">
+                        <div class="date">{{ art.date|default('منذ يومين') }}</div>
+                        <h3>{{ art.title }}</h3>
+                        <p>{{ art.summary }}</p>
+                        <a href="{{ art.url|default('/blog') }}" class="read-more">
+                            <span>اقرأي المقال كاملاً</span>
+                            <i class="sicon-arrow-left text-xs rtl:rotate-180"></i>
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <!-- Default 3 Articles -->
+            <div class="article-card">
+                <div class="article-img">
+                    <img src="https://cdn.salla.sa/ZrBEO/MopzhoqpTkDObcKc8Q8n77AuydanfsGXdZO7iinH.jpg" alt="دليل العناية بالعبايات" loading="lazy" />
+                </div>
+                <div class="article-body">
+                    <div class="date">15 أغسطس 2026</div>
+                    <h3>أسرار الحفاظ على سواد ونعومة قماش العباية لسنوات</h3>
+                    <p>إليكِ أهم النصائح الاحترافية لغسيل وكيّ الأقمشة الحساسة كالكريب والحرير دون أن تفقد رونقها وبريقها.</p>
+                    <a href="/blog" class="read-more">
+                        <span>اقرأي المقال كاملاً</span>
+                        <i class="sicon-arrow-left text-xs rtl:rotate-180"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="article-card">
+                <div class="article-img">
+                    <img src="https://cdn.salla.sa/ZrBEO/3gOhYSaIhaHxhH2IHWxJYDl9JHwxP6dGKiZFSq4K.jpg" alt="تنسيق المجوهرات" loading="lazy" />
+                </div>
+                <div class="article-body">
+                    <div class="date">12 أغسطس 2026</div>
+                    <h3>كيف تختارين قطع المجوهرات المناسبة لقصّة ياقة فستانك؟</h3>
+                    <p>دليل بصري سريع لتنسيق السلاسل والأقراط بما يتناسب مع كل إطلالة في المناسبات النهارية والمسائية.</p>
+                    <a href="/blog" class="read-more">
+                        <span>اقرأي المقال كاملاً</span>
+                        <i class="sicon-arrow-left text-xs rtl:rotate-180"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="article-card">
+                <div class="article-img">
+                    <img src="https://cdn.salla.sa/ZrBEO/MopzhoqpTkDObcKc8Q8n77AuydanfsGXdZO7iinH.jpg" alt="روتين النضارة" loading="lazy" />
+                </div>
+                <div class="article-body">
+                    <div class="date">10 أغسطس 2026</div>
+                    <h3>خطوات تجهيز البشرة لمكياج يدوم طوال اليوم بدون تكتل</h3>
+                    <p>الروتين الصباحي المثالي لترطيب وتجهيز البشرة قبل وضع الفاونديشن للحصول على مظهر مخملي مشرق.</p>
+                    <a href="/blog" class="read-more">
+                        <span>اقرأي المقال كاملاً</span>
+                        <i class="sicon-arrow-left text-xs rtl:rotate-180"></i>
+                    </a>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</section>

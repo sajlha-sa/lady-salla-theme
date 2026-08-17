@@ -1,0 +1,83 @@
+{#
+| Variable                          | Type       | Description                                         |
+|-----------------------------------|------------|-----------------------------------------------------|
+| component.title                   | string     | Heading                                             |
+| component.description             | string     | Subtitle                                            |
+| component.reviews                 | object[]   | List of reviews (name, comment, avatar, city)       |
+| position                          | int        | Block position                                      |
+#}
+<section data-testid="store-home-lady-testimonials" class="s-block lady-testimonials-section container">
+    <div class="section-header">
+        <h2>{{ component.title|default('آراء وتجارب العميلات') }}</h2>
+        <p>{{ component.description|default('نفخر بثقة أكثر من 5,000 عميلة سعيدة اختاروا منتجاتنا لتكون جزءاً من إطلالاتهن الفاخرة.') }}</p>
+    </div>
+
+    <div class="testimonials-grid">
+        {% if component.reviews|length %}
+            {% for review in component.reviews %}
+                <div class="review-card">
+                    <div class="stars">
+                        <i class="sicon-star2"></i><i class="sicon-star2"></i><i class="sicon-star2"></i><i class="sicon-star2"></i><i class="sicon-star2"></i>
+                    </div>
+                    <p class="comment">"{{ review.comment }}"</p>
+                    <div class="author-info">
+                        <div class="avatar">
+                            {% if review.avatar %}
+                                <img src="{{ review.avatar }}" alt="{{ review.name }}" />
+                            {% else %}
+                                {{ review.name|slice(0, 1) }}
+                            {% endif %}
+                        </div>
+                        <div>
+                            <div class="name">{{ review.name }}</div>
+                            <div class="badge"><i class="sicon-check-circle"></i> مشترية مؤكدة {% if review.city %}• {{ review.city }}{% endif %}</div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <!-- Default 3 Testimonials -->
+            <div class="review-card">
+                <div class="stars">
+                    <i class="sicon-star2"></i><i class="sicon-star2"></i><i class="sicon-star2"></i><i class="sicon-star2"></i><i class="sicon-star2"></i>
+                </div>
+                <p class="comment">"العباية خيال خيال! القماش سواد فاحم وبارد جداً والتفصيل يجنن، والتغليف يفتح النفس كأنه واصل من براند عالمي. مو آخر تعامل بإذن الله!"</p>
+                <div class="author-info">
+                    <div class="avatar">ن</div>
+                    <div>
+                        <div class="name">نورة العتيبي</div>
+                        <div class="badge"><i class="sicon-check-circle"></i> مشترية مؤكدة • الرياض</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="stars">
+                    <i class="sicon-star2"></i><i class="sicon-star2"></i><i class="sicon-star2"></i><i class="sicon-star2"></i><i class="sicon-star2"></i>
+                </div>
+                <p class="comment">"طلبت بوكس الهدايا مع كارت الإهداء لأختي بمناسبة تخرجها، الإسوارة طلعت أفخم من الصور بمليون مرة وسرعة التوصيل صدمتني خلال يومين!"</p>
+                <div class="author-info">
+                    <div class="avatar">ر</div>
+                    <div>
+                        <div class="name">ريم القحطاني</div>
+                        <div class="badge"><i class="sicon-check-circle"></i> مشترية مؤكدة • جدة</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="stars">
+                    <i class="sicon-star2"></i><i class="sicon-star2"></i><i class="sicon-star2"></i><i class="sicon-star2"></i><i class="sicon-star2"></i>
+                </div>
+                <p class="comment">"الميك اب أصلي وثابت طول اليوم، وتفاصيل درجات الألوان بالموقع ساعدتني اختار درجتي بالضبط بدون حيرة. شكراً لكم على الذوق والرقي."</p>
+                <div class="author-info">
+                    <div class="avatar">س</div>
+                    <div>
+                        <div class="name">سارة الشهري</div>
+                        <div class="badge"><i class="sicon-check-circle"></i> مشترية مؤكدة • الدمام</div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</section>

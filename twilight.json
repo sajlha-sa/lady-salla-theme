@@ -692,6 +692,136 @@
             ]
         },
         {
+            "key": "lady-main-offers-uuid",
+            "title": {
+                "en": "Main Offers Banner - Lady",
+                "ar": "بانر عروض رئيسي - ليدي"
+            },
+            "icon": "sicon-tag-ribbon",
+            "path": "home.lady-main-offers",
+            "fields": [
+                {
+                    "id": "badge",
+                    "type": "string",
+                    "label": "شارة العرض",
+                    "value": "عروض الموسم الفاخرة"
+                },
+                {
+                    "id": "title",
+                    "type": "string",
+                    "label": "العنوان الرئيسي",
+                    "value": "تألقي بأحدث تشكيلات الموسم بخصم يصل إلى 40%"
+                },
+                {
+                    "id": "description",
+                    "type": "string",
+                    "format": "textarea",
+                    "label": "الوصف",
+                    "value": "تشكيلة استثنائية من العبايات والمجوهرات ومستحضرات التجميل المختارة لتمنحك إطلالة فريدة."
+                },
+                {
+                    "id": "btn_text",
+                    "type": "string",
+                    "label": "نص الزر",
+                    "value": "تسوقي العروض الآن"
+                },
+                {
+                    "id": "btn_url",
+                    "type": "string",
+                    "label": "رابط الزر",
+                    "value": "/offers"
+                },
+                {
+                    "id": "bg_image",
+                    "type": "string",
+                    "format": "image",
+                    "label": "صورة الخلفية",
+                    "value": "https://cdn.salla.sa/ZrBEO/MopzhoqpTkDObcKc8Q8n77AuydanfsGXdZO7iinH.jpg"
+                }
+            ]
+        },
+        {
+            "key": "lady-instagram-uuid",
+            "title": {
+                "en": "Instagram Feed - Lady",
+                "ar": "شاهد الانستجرام - ليدي"
+            },
+            "icon": "sicon-instagram",
+            "path": "home.lady-instagram",
+            "fields": [
+                {
+                    "id": "handle",
+                    "type": "string",
+                    "label": "حساب الانستجرام",
+                    "value": "@lady.official"
+                },
+                {
+                    "id": "title",
+                    "type": "string",
+                    "label": "العنوان",
+                    "value": "شاهدي إطلالات العميلات على انستقرام"
+                }
+            ]
+        },
+        {
+            "key": "lady-testimonials-uuid",
+            "title": {
+                "en": "Customer Reviews - Lady",
+                "ar": "آراء العملاء - ليدي"
+            },
+            "icon": "sicon-star2",
+            "path": "home.lady-testimonials",
+            "fields": [
+                {
+                    "id": "title",
+                    "type": "string",
+                    "label": "العنوان",
+                    "value": "آراء وتجارب العميلات"
+                },
+                {
+                    "id": "description",
+                    "type": "string",
+                    "format": "textarea",
+                    "label": "الوصف",
+                    "value": "نفخر بثقة أكثر من 5,000 عميلة سعيدة اختاروا منتجاتنا لتكون جزءاً من إطلالاتهن الفاخرة."
+                }
+            ]
+        },
+        {
+            "key": "lady-branches-uuid",
+            "title": {
+                "en": "Our Branches - Lady",
+                "ar": "فروعنا - ليدي"
+            },
+            "icon": "sicon-store",
+            "path": "home.lady-branches",
+            "fields": [
+                {
+                    "id": "title",
+                    "type": "string",
+                    "label": "العنوان",
+                    "value": "فروعنا ومعارضنا"
+                }
+            ]
+        },
+        {
+            "key": "lady-articles-uuid",
+            "title": {
+                "en": "Articles & Magazine - Lady",
+                "ar": "مقالات - ليدي"
+            },
+            "icon": "sicon-newspaper",
+            "path": "home.lady-articles",
+            "fields": [
+                {
+                    "id": "title",
+                    "type": "string",
+                    "label": "العنوان",
+                    "value": "المجلة ونقاط الأناقة"
+                }
+            ]
+        },
+        {
             "key": "186b3f4f-25cf-4d3c-abca-cef7eed6f0ab",
             "title": {
                 "en": "Enhances Animated Images",

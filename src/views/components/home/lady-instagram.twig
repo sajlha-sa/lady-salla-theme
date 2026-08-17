@@ -1,0 +1,56 @@
+{#
+| Variable                          | Type       | Description                                         |
+|-----------------------------------|------------|-----------------------------------------------------|
+| component.handle                  | string     | Instagram handle (e.g. "@lady_store")               |
+| component.title                   | string     | Heading                                             |
+| component.images                  | object[]   | List of images with link                            |
+| position                          | int        | Block position                                      |
+#}
+<section data-testid="store-home-lady-instagram" class="s-block lady-instagram-section container">
+    <div class="insta-header">
+        <a href="https://instagram.com" target="_blank" class="insta-handle">
+            <i class="sicon-instagram"></i>
+            <span>{{ component.handle|default('@lady.official') }}</span>
+        </a>
+        <h2>{{ component.title|default('شاهدي إطلالات العميلات على انستقرام') }}</h2>
+    </div>
+
+    <div class="insta-grid">
+        {% if component.images|length %}
+            {% for item in component.images %}
+                <a href="{{ item.url|default('https://instagram.com') }}" target="_blank" class="insta-card group">
+                    <img src="{{ item.image }}" alt="Instagram Post" loading="lazy" />
+                    <div class="insta-overlay">
+                        <i class="sicon-instagram"></i>
+                    </div>
+                </a>
+            {% endfor %}
+        {% else %}
+            <!-- Default 6 Instagram Grid Cards -->
+            <a href="https://instagram.com" target="_blank" class="insta-card group">
+                <img src="https://cdn.salla.sa/ZrBEO/MopzhoqpTkDObcKc8Q8n77AuydanfsGXdZO7iinH.jpg" alt="Insta 1" loading="lazy" />
+                <div class="insta-overlay"><i class="sicon-instagram"></i></div>
+            </a>
+            <a href="https://instagram.com" target="_blank" class="insta-card group">
+                <img src="https://cdn.salla.sa/ZrBEO/3gOhYSaIhaHxhH2IHWxJYDl9JHwxP6dGKiZFSq4K.jpg" alt="Insta 2" loading="lazy" />
+                <div class="insta-overlay"><i class="sicon-instagram"></i></div>
+            </a>
+            <a href="https://instagram.com" target="_blank" class="insta-card group">
+                <img src="https://cdn.salla.sa/ZrBEO/MopzhoqpTkDObcKc8Q8n77AuydanfsGXdZO7iinH.jpg" alt="Insta 3" loading="lazy" />
+                <div class="insta-overlay"><i class="sicon-instagram"></i></div>
+            </a>
+            <a href="https://instagram.com" target="_blank" class="insta-card group">
+                <img src="https://cdn.salla.sa/ZrBEO/3gOhYSaIhaHxhH2IHWxJYDl9JHwxP6dGKiZFSq4K.jpg" alt="Insta 4" loading="lazy" />
+                <div class="insta-overlay"><i class="sicon-instagram"></i></div>
+            </a>
+            <a href="https://instagram.com" target="_blank" class="insta-card group">
+                <img src="https://cdn.salla.sa/ZrBEO/MopzhoqpTkDObcKc8Q8n77AuydanfsGXdZO7iinH.jpg" alt="Insta 5" loading="lazy" />
+                <div class="insta-overlay"><i class="sicon-instagram"></i></div>
+            </a>
+            <a href="https://instagram.com" target="_blank" class="insta-card group">
+                <img src="https://cdn.salla.sa/ZrBEO/3gOhYSaIhaHxhH2IHWxJYDl9JHwxP6dGKiZFSq4K.jpg" alt="Insta 6" loading="lazy" />
+                <div class="insta-overlay"><i class="sicon-instagram"></i></div>
+            </a>
+        {% endif %}
+    </div>
+</section>
