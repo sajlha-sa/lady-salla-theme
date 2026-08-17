@@ -22,7 +22,8 @@
         "component-store-features",
         "component-youtube",
         "menu-images",
-        "filters"
+        "filters",
+        "component-random-testimonials"
     ],
     "settings": [
         {
@@ -1245,4 +1246,3 @@
         "en": "A wide range of features to support your business and provide an exciting shopping experience for your customers"
     }
 }
-
