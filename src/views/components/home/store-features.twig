@@ -8,14 +8,14 @@
 | position      | Int    | Sorting number start from zero                                   |
 #}
 <section data-testid="store-home-features" class="s-block s-block--features container">
-    <div class="grid grid-cols-[repeat(2,minmax(0,1fr))] md:grid-cols-[repeat(3,minmax(0,1fr))] gap-4 sm:gap-6 xl:gap-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
       {% for item in items %}
-          <div class="s-block--features__item">
-            <div class="feature-icon">
+          <div class="s-block--features__item group">
+            <div class="feature-icon group-hover:scale-110 transition-transform">
               <i class="{{ item.icon }}"></i>
             </div>
-            <h2>{{ item.title }}</h2>
-            <p>{{ item.text }}</p>
+            <h2 class="text-sm sm:text-base font-bold text-gray-800 mb-1 group-hover:text-primary transition-colors">{{ item.title }}</h2>
+            <p class="text-xs text-gray-500 leading-relaxed">{{ item.text }}</p>
           </div>
       {% endfor %}
     </div>

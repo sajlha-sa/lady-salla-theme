@@ -6,23 +6,37 @@ $main-text-color: var(--main-text-color);
 
 :root {
   --infinte-color: #c9c9c9;
-  --main-text-color: #231f1e;
-  --main-text-color-dark: #2b2d34;
+  --main-text-color: #1C1917;
+  --main-text-color-dark: #11100F;
 
-  /* current */
-  --color-primary: #5cd5c4;
-  --color-primary: #414042;
-  --color-primary-d: #272628;
-  --color-primary-l: #676668;
-  --color-primary-reverse: #ff6767;
-  --color-text: #7c8082;
-  --bg-gray: #c6c7ce1a;
-  --color-grey: #f5f7f9;
-  --color-light-grey: #eeeeee;
+  /* Default Lady Colors (Rose & Blush) */
+  --color-primary: #C4737F;
+  --color-primary-d: #A3535F;
+  --color-primary-l: #FDF2F4;
+  --color-primary-reverse: #FFFFFF;
+  --color-text: #6B7280;
+  --bg-gray: #FAF7F5;
+  --color-grey: #FAF8F6;
+  --color-light-grey: #F5EFEB;
+
+  /* Lady Theme Specific Tokens */
+  --lady-rose: #C4737F;
+  --lady-rose-light: #FDF2F4;
+  --lady-rose-dark: #8E3E4B;
+  --lady-gold: #C5A880;
+  --lady-gold-light: #FAF5EE;
+  --lady-mocha: #A37B5C;
+  --lady-mocha-light: #FAF7F2;
+  --lady-lavender: #93739B;
+  --lady-lavender-light: #F7F4F9;
+  --lady-surface: #FCFAF8;
+  --lady-border: #F0EAE3;
+  --lady-radius: 1.25rem;
+
   /* font-size */
-  --font-sm: 0.8685714286rem;
-  /* font-family: ; */
-  --font-main: "DINNextLTArabic";
+  --font-sm: 0.875rem;
+  /* font-family */
+  --font-main: "Readex Pro", "Tajawal", "DINNextLTArabic", sans-serif;
 
   /* plugins */
   --mm-ocd-width: calc(100% - 51px);

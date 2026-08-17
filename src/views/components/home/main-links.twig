@@ -24,13 +24,17 @@
               {% if component.show_cats %}
                 {% for cat in component.categories %}
                     <div class="swiper-slide slide--one-sixth">
-                        <a href="{{ cat.url }}" class="slide--cat-entry">
-                            {% if cat.image %}
-                              <img src="{{ cat.image ? cat.image : 'images/placeholder.png' | asset }}" class="w-16 h-16 object-cover rounded-full mb-2.5 {{ cat.image ? '' : 'has-placeholder'}}" width="64" height="64" alt="{{ menu.title }}"/>
-                            {% else %}
-                              <i class="{{ cat.icon }}"></i>
-                            {% endif %}
-                            <h2>{{ cat.name }}</h2>
+                        <a href="{{ cat.url }}" class="group flex flex-col items-center justify-center p-3 text-center transition-transform duration-300 hover:scale-105">
+                            <div class="p-1 rounded-full bg-gradient-to-tr from-primary via-[color:var(--lady-accent,#E8A598)] to-primary/30 mb-2.5 shadow-sm group-hover:shadow-md transition-shadow">
+                              {% if cat.image %}
+                                <img src="{{ cat.image ? cat.image : 'images/placeholder.png' | asset }}" class="w-20 h-20 sm:w-24 sm:h-24 object-cover rounded-full border-2 border-white bg-gray-50 {{ cat.image ? '' : 'has-placeholder'}}" width="96" height="96" alt="{{ cat.name }}"/>
+                              {% else %}
+                                <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full border-2 border-white bg-primary/10 flex items-center justify-center text-primary">
+                                  <i class="{{ cat.icon|default('sicon-tag') }} text-2xl"></i>
+                                </div>
+                              {% endif %}
+                            </div>
+                            <h2 class="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-primary transition-colors truncate max-w-full">{{ cat.name }}</h2>
                         </a>
                     </div>
                 {% endfor %}
@@ -38,9 +42,9 @@
                 {% for link in component.links %}
                   {% if link.title %}
                     <div class="swiper-slide slide--one-sixth">
-                        <a href="{{ link.url }}" class="slide--cat-entry">
-                            <i class="{{ link.icon }}"></i>
-                            <h2>{{ link.title }}</h2>
+                        <a href="{{ link.url }}" class="slide--cat-entry rounded-2xl border border-[color:var(--lady-border,#F0EAE3)]/70 hover:border-primary/40 hover:shadow-md transition-all">
+                            <i class="{{ link.icon }} text-primary text-2xl mb-2"></i>
+                            <h2 class="text-xs sm:text-sm font-semibold text-gray-800">{{ link.title }}</h2>
                         </a>
                     </div>
                   {% endif %}

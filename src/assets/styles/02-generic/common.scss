@@ -16,9 +16,13 @@ input[type="file"] {
 }
 
 body{
-  @apply bg-gray-50;
+  @apply bg-[color:var(--lady-surface,#FCFAF8)] text-gray-800 antialiased;
+  &::selection, *::selection {
+    background-color: rgba(196, 115, 127, 0.2);
+    color: var(--color-primary);
+  }
   [type='text'], [type='email'], [type='url'], [type='password'], [type='number'], [type='date'], [type='datetime-local'], [type='month'], [type='search'], [type='tel'], [type='time'], [type='week'], [multiple], textarea, select{
-    @apply focus:ring-0;
+    @apply focus:ring-1 focus:ring-primary focus:border-primary;
   }
 }
 

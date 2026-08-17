@@ -1,7 +1,7 @@
 {
     "name": {
-        "ar": "رائد",
-        "en": "Theme Raed"
+        "ar": "ليدي | Lady",
+        "en": "Lady Theme"
     },
     "repository": "https://github.com/SallaApp/theme-raed",
     "author_email": "support@salla.sa",
@@ -25,6 +25,116 @@
         "filters"
     ],
     "settings": [
+        {
+            "id": "theme_color_preset",
+            "type": "items",
+            "format": "dropdown-list",
+            "label": "باليت الألوان المقترحة (ستايل الثيم)",
+            "description": "اختاري الطابع اللوني المناسب لنوع متجرك (ميك اب، عبايات، كاجوال، أو عطور)",
+            "icon": "sicon-paint-brush",
+            "selected": [
+                {
+                    "label": "روز وبلاش ناعم (Rose Quartz & Blush) - للميك اب والعطور",
+                    "value": "rose_blush",
+                    "key": "preset-rose-blush"
+                }
+            ],
+            "options": [
+                {
+                    "label": "روز وبلاش ناعم (Rose Quartz & Blush) - للميك اب والعطور",
+                    "value": "rose_blush",
+                    "key": "preset-rose-blush"
+                },
+                {
+                    "label": "حرير وأونيكس فاخر (Luxury Silk & Noir Gold) - للعبايات والأزياء",
+                    "value": "silk_gold",
+                    "key": "preset-silk-gold"
+                },
+                {
+                    "label": "موكا ونيود هادئ (Nude Sand & Mocha) - عبايات وجمال طبيعي",
+                    "value": "nude_mocha",
+                    "key": "preset-nude-mocha"
+                },
+                {
+                    "label": "لافندر وموف ساحر (Soft Lavender & Lilac) - راحة وأنوثة",
+                    "value": "soft_lavender",
+                    "key": "preset-soft-lavender"
+                },
+                {
+                    "label": "تخصيص حر (حسب لون المتجر المختار في سلة)",
+                    "value": "custom",
+                    "key": "preset-custom"
+                }
+            ],
+            "source": "Manual",
+            "required": true
+        },
+        {
+            "type": "boolean",
+            "id": "enable_announcement_bar",
+            "label": "تفعيل شريط الإعلانات التفاعلي أعلى الصفحة",
+            "icon": "sicon-megaphone",
+            "format": "switch",
+            "value": true,
+            "selected": true
+        },
+        {
+            "type": "string",
+            "id": "announcement_text",
+            "label": "نص شريط الإعلانات الترويجي",
+            "icon": "sicon-font",
+            "value": "✨ شحن مجاني للطلبات أكثر من 300 ريال | استخدمي كود LADY10 لخصم 10% 🌸",
+            "placeholder": "اكتبي نص الإعلان هنا..."
+        },
+        {
+            "id": "product_card_aspect",
+            "type": "items",
+            "format": "dropdown-list",
+            "label": "أبعاد صور المنتجات في البطاقة",
+            "description": "نسبة 3:4 الطولية مناسبة جداً للعبايات والأزياء، بينما 1:1 المربعة مناسبة لمنتجات المكياج والعناية",
+            "icon": "sicon-layout",
+            "selected": [
+                {
+                    "label": "طولي 3:4 (مثالي للعبايات وفساتين الأزياء)",
+                    "value": "portrait",
+                    "key": "card-aspect-portrait"
+                }
+            ],
+            "options": [
+                {
+                    "label": "طولي 3:4 (مثالي للعبايات وفساتين الأزياء)",
+                    "value": "portrait",
+                    "key": "card-aspect-portrait"
+                },
+                {
+                    "label": "مربع 1:1 (مثالي للمكياج والعطور)",
+                    "value": "square",
+                    "key": "card-aspect-square"
+                }
+            ],
+            "source": "Manual",
+            "required": true
+        },
+        {
+            "type": "boolean",
+            "id": "show_abaya_size_guide",
+            "label": "تفعيل زر ونافذة دليل المقاسات في صفحة المنتج",
+            "description": "يساعد العميلات على اختيار مقاس العباية بدقة (50، 52، 54، 56، 58، 60)",
+            "icon": "sicon-t-shirt",
+            "format": "switch",
+            "value": true,
+            "selected": true
+        },
+        {
+            "type": "boolean",
+            "id": "show_category_stories",
+            "label": "عرض شريط تصنيفات الستوري الدائري في الرئيسية",
+            "description": "طريقة عرض عصرية دائرية للتصنيفات بأسلوب انستقرام",
+            "icon": "sicon-instagram",
+            "format": "switch",
+            "value": true,
+            "selected": true
+        },
         {
             "id": "squar_photo_bg_image_size",
             "type": "items",

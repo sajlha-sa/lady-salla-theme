@@ -1,0 +1,118 @@
+{# Abaya Size Guide Modal & Trigger for Lady Theme #}
+{% if theme.settings.get('show_abaya_size_guide', true) %}
+<div class="lady-size-guide-section bg-[color:var(--lady-surface,#FCFAF8)] border border-[color:var(--lady-border,#F0EAE3)] p-4 rounded-2xl mb-4">
+    <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2 text-sm font-medium text-gray-700">
+            <span class="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center">
+                <i class="sicon-t-shirt text-lg"></i>
+            </span>
+            <span>دليل المقاسات والعناية</span>
+        </div>
+        <button type="button" 
+                onclick="document.getElementById('lady-abaya-size-modal').classList.remove('hidden')"
+                class="text-xs font-semibold text-primary hover:underline flex items-center gap-1">
+            <span>جدول مقاسات العبايات</span>
+            <i class="sicon-keyboard_arrow_left rtl:inline-block ltr:rotate-180"></i>
+        </button>
+    </div>
+</div>
+
+{# Modal #}
+<div id="lady-abaya-size-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm hidden transition-opacity">
+    <div class="bg-white rounded-3xl max-w-lg w-full p-6 relative max-h-[90vh] overflow-y-auto shadow-2xl border border-gray-100">
+        {# Close Button #}
+        <button type="button" 
+                onclick="document.getElementById('lady-abaya-size-modal').classList.add('hidden')"
+                class="absolute top-4 rtl:left-4 ltr:right-4 w-9 h-9 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-600 flex items-center justify-center transition-colors">
+            <i class="sicon-cancel text-sm"></i>
+        </button>
+
+        <div class="text-center mb-6">
+            <span class="inline-block p-3 rounded-full bg-primary/10 text-primary mb-2">
+                <i class="sicon-t-shirt text-2xl"></i>
+            </span>
+            <h3 class="text-xl font-bold text-gray-900">دليل مقاسات العبايات القياسي</h3>
+            <p class="text-xs text-gray-500 mt-1">جميع المقاسات بالإنش (Inch) لضمان الاختيار المثالي لإطلالتك</p>
+        </div>
+
+        {# Table #}
+        <div class="overflow-x-auto rounded-2xl border border-gray-100 mb-6">
+            <table class="w-full text-xs sm:text-sm text-center">
+                <thead class="bg-primary/10 text-primary font-bold">
+                    <tr>
+                        <th class="py-3 px-3">المقاس</th>
+                        <th class="py-3 px-3">طول العباية</th>
+                        <th class="py-3 px-3">عرض الصدر</th>
+                        <th class="py-3 px-3">طول الكم</th>
+                        <th class="py-3 px-3">الطول المقترح</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-100 text-gray-700">
+                    <tr class="hover:bg-gray-50 transition-colors">
+                        <td class="py-2.5 px-3 font-bold text-primary">50</td>
+                        <td class="py-2.5 px-3">50"</td>
+                        <td class="py-2.5 px-3">21"</td>
+                        <td class="py-2.5 px-3">26"</td>
+                        <td class="py-2.5 px-3 text-xs text-gray-500">148-152 سم</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50 transition-colors">
+                        <td class="py-2.5 px-3 font-bold text-primary">52</td>
+                        <td class="py-2.5 px-3">52"</td>
+                        <td class="py-2.5 px-3">22"</td>
+                        <td class="py-2.5 px-3">27"</td>
+                        <td class="py-2.5 px-3 text-xs text-gray-500">153-157 سم</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50 transition-colors">
+                        <td class="py-2.5 px-3 font-bold text-primary">54</td>
+                        <td class="py-2.5 px-3">54"</td>
+                        <td class="py-2.5 px-3">23"</td>
+                        <td class="py-2.5 px-3">28"</td>
+                        <td class="py-2.5 px-3 text-xs text-gray-500">158-162 سم</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50 transition-colors">
+                        <td class="py-2.5 px-3 font-bold text-primary">56</td>
+                        <td class="py-2.5 px-3">56"</td>
+                        <td class="py-2.5 px-3">24"</td>
+                        <td class="py-2.5 px-3">29"</td>
+                        <td class="py-2.5 px-3 text-xs text-gray-500">163-167 سم</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50 transition-colors">
+                        <td class="py-2.5 px-3 font-bold text-primary">58</td>
+                        <td class="py-2.5 px-3">58"</td>
+                        <td class="py-2.5 px-3">25"</td>
+                        <td class="py-2.5 px-3">30"</td>
+                        <td class="py-2.5 px-3 text-xs text-gray-500">168-172 سم</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50 transition-colors">
+                        <td class="py-2.5 px-3 font-bold text-primary">60</td>
+                        <td class="py-2.5 px-3">60"</td>
+                        <td class="py-2.5 px-3">26"</td>
+                        <td class="py-2.5 px-3">30"</td>
+                        <td class="py-2.5 px-3 text-xs text-gray-500">173+ سم</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        {# Measurement Tips & Care Advice #}
+        <div class="space-y-3 bg-[color:var(--lady-surface,#FCFAF8)] p-4 rounded-2xl text-xs leading-relaxed text-gray-600 border border-[color:var(--lady-border,#F0EAE3)]">
+            <div class="flex items-start gap-2">
+                <i class="sicon-check-circle text-primary mt-0.5"></i>
+                <span><strong>كيف تأخذين قياسك:</strong> قيسي الطول من أعلى الكتف وحتى أسفل الكاحل مع مراعاة ارتفاع الحذاء المفضل.</span>
+            </div>
+            <div class="flex items-start gap-2">
+                <i class="sicon-heart text-primary mt-0.5"></i>
+                <span><strong>إرشادات العناية الفاخرة:</strong> يُفضل الغسيل اليدوي بماء بارد وشامبو مخصص للعبايات، وتجنب استخدام النشافة الآلية للحفاظ على انسيابية القماش.</span>
+            </div>
+        </div>
+
+        <div class="mt-6 text-center">
+            <button type="button"
+                    onclick="document.getElementById('lady-abaya-size-modal').classList.add('hidden')"
+                    class="btn btn--primary w-full py-2.5 rounded-full text-sm font-semibold">
+                حسناً، فهمت
+            </button>
+        </div>
+    </div>
+</div>
+{% endif %}

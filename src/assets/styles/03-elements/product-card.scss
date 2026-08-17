@@ -10,84 +10,91 @@
 
 .s-product-card {
   &-entry {
-    @apply h-full transition-shadow duration-300 bg-white  rounded justify-between flex relative;
+    @apply h-full transition-all duration-500 bg-white rounded-2xl justify-between flex relative overflow-hidden border border-lady-border/60;
+    &:hover {
+      box-shadow: var(--lady-shadow-hover, 0 16px 36px -8px rgba(196, 115, 127, 0.14), 0 4px 12px rgba(0, 0, 0, 0.03));
+      border-color: var(--color-primary-light, #FDF2F4);
+    }
   }
 
   &-shadow {
     &:hover {
-      box-shadow: 5px 10px 30px #2b2d340d;
+      box-shadow: 0 16px 36px -8px rgba(196, 115, 127, 0.14);
     }
   }
 
   &-out-of-stock {
     img.loaded {
-      @apply grayscale;
+      @apply grayscale opacity-60;
     }
   }
 
   &-overlay {
-    @apply transition-opacity duration-700 opacity-50 hover:opacity-40 absolute top-0 bottom-0 left-0 right-0 bg-black;
+    @apply transition-opacity duration-700 opacity-50 hover:opacity-40 absolute top-0 bottom-0 left-0 right-0 bg-black/40;
   }
 
   &-vertical {
     @apply flex-col;
     .s-product-card-image {
-      @apply flex-1 rounded-t;
+      @apply flex-1 rounded-t-2xl overflow-hidden aspect-[3/4] sm:aspect-auto;
     }
     .s-product-card-wishlist-btn {
-      @apply absolute top-2 md:right-2 md:rtl:left-2 md:rtl:right-[unset] right-2 rtl:left-2 rtl:right-[unset] opacity-75 hover:opacity-100;
+      @apply absolute top-3 md:right-3 md:rtl:left-3 md:rtl:right-[unset] right-3 rtl:left-3 rtl:right-[unset] z-10;
     }
     .s-product-card-wishlist-btn button {
-      @apply #{'!bg-white m-0'};
+      @apply bg-white/90 backdrop-blur-sm w-9 h-9 rounded-full shadow-sm flex items-center justify-center transition-all duration-300 hover:bg-white hover:scale-110 text-gray-400 hover:text-red-500 m-0 border border-gray-100/60;
     }
   }
 
   &-minimal {
     .s-product-card-wishlist-btn {
-      @apply absolute top-0 md:right-0 md:rtl:left-0 md:rtl:right-[unset] right-0 rtl:left-0 rtl:right-[unset] opacity-75 hover:opacity-100;
+      @apply absolute top-2 md:right-2 md:rtl:left-2 md:rtl:right-[unset] right-2 rtl:left-2 rtl:right-[unset] z-10;
     }
     .s-product-card-image {
-      @apply w-32 sm:w-56 lg:w-28;
+      @apply w-32 sm:w-56 lg:w-28 rounded-xl;
     }
     .s-product-card-content-title a {
       @apply line-clamp-2;
     }
     .s-product-card-content {
-      @apply flex flex-col flex-1 overflow-hidden p-5;
+      @apply flex flex-col flex-1 overflow-hidden p-4 sm:p-5;
     }
     .s-product-card-wishlist-btn button {
-      @apply bg-transparent m-0;
+      @apply bg-white/80 backdrop-blur-sm w-8 h-8 rounded-full shadow-sm flex items-center justify-center transition-all duration-300 hover:scale-110 m-0;
     }
   }
 
   &-wishlist-btn {
     button:hover svg {
-      @apply fill-gray-600;
+      @apply fill-red-500 scale-110;
     }
   }
 
   &-fit-height {
     .s-product-card-image {
-      @apply h-44 max-h-60;
+      @apply h-52 max-h-72;
     }
   }
 
   &-quantity {
-    @apply absolute bottom-1 z-1 font-bold px-2.5 py-1.5 md:py-2 text-xs bg-red-400 text-white rounded left-1/2 transform -translate-x-1/2 max-w-[calc(100%-60px)];
+    @apply absolute bottom-2 z-1 font-medium px-3 py-1 text-xs bg-amber-500/90 backdrop-blur-sm text-white rounded-full left-1/2 transform -translate-x-1/2 max-w-[calc(100%-40px)] shadow-sm;
   }
 
   &-promotion-title {
-    @apply absolute top-4 left-0 rtl:right-0 rtl:left-[unset] z-1 font-bold px-2.5 py-1.5 md:py-2 text-xs bg-red-400 text-white rounded-r rtl:rounded-l rtl:rounded-r-none max-w-[calc(100%-60px)];
+    @apply absolute top-3 left-3 rtl:right-3 rtl:left-[unset] z-1 font-medium px-3 py-1 text-xs bg-primary text-primary-reverse rounded-full max-w-[calc(100%-60px)] shadow-sm tracking-wide;
   }
 
   &-out-badge {
-    @apply absolute bottom-2 z-1 font-bold px-2.5 py-1.5 md:py-2 text-xs bg-gray-100 text-[#999999] rounded-md left-1/2 transform -translate-x-1/2 max-w-[calc(100%-60px)];
+    @apply absolute bottom-3 z-1 font-medium px-3 py-1 text-xs bg-gray-900/80 backdrop-blur-sm text-white rounded-full left-1/2 transform -translate-x-1/2 max-w-[calc(100%-40px)];
   }
 
   &-image {
-    @apply bg-gray-100 relative overflow-hidden hover:opacity-90 w-full h-full shrink-0 before:absolute before:top-1/2 before:left-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:inline-block before:text-gray-200 before:text-3xl;
+    @apply bg-gray-50 relative overflow-hidden w-full h-full shrink-0;
     img {
-      @apply transition-opacity duration-500 h-full w-full;
+      @apply transition-transform duration-700 ease-out h-full w-full object-cover;
+    }
+    &:hover img {
+      @apply scale-105;
     }
     img.lazy {
       @apply opacity-0;
@@ -98,24 +105,24 @@
   }
 
   &-content {
-    @apply p-3 sm:p-5 flex flex-col relative;
+    @apply p-4 sm:p-5 flex flex-col relative bg-white flex-1;
   }
 
   &-content-title {
-    @apply mb-2.5 leading-6 max-w-full;
+    @apply mb-2 leading-relaxed max-w-full;
     a {
-      @apply block text-sm font-bold text-gray-800 hover:text-primary;
+      @apply block text-sm font-semibold text-gray-800 hover:text-primary transition-colors line-clamp-2;
     }
   }
 
   &-content-subtitle {
-    @apply text-sm text-gray-600 leading-6 mb-2.5;
+    @apply text-xs text-gray-500 leading-normal mb-2 line-clamp-1;
   }
 
   &-donation-input {
     @apply flex-1;
     label {
-      @apply block text-sm mb-2.5;
+      @apply block text-sm mb-2;
     }
     label span {
       @apply text-red-500;
@@ -123,27 +130,27 @@
   }
 
   &-content-sub {
-    @apply w-full flex justify-between items-center mb-5;
+    @apply w-full flex justify-between items-center mb-3 mt-auto;
   }
 
   &-rating {
-    @apply flex items-center text-sm text-gray-400 space-x-1 rtl:space-x-reverse;
+    @apply flex items-center text-xs text-gray-400 space-x-1 rtl:space-x-reverse;
     span svg {
-      @apply fill-amber-400 w-4 h-4 mb-[3px];
+      @apply fill-amber-400 w-3.5 h-3.5 mb-[2px];
     }
   }
 
   &-content-footer {
-    @apply flex items-center mt-auto;
+    @apply flex items-center justify-between mt-auto pt-2 border-t border-gray-50;
   }
 
   &-sale-price {
-    @apply space-x-1 rtl:space-x-reverse;
+    @apply flex items-baseline gap-2;
     h4 {
-      @apply text-red-400 font-bold text-sm inline-block;
+      @apply text-primary font-bold text-sm sm:text-base;
     }
     span {
-      @apply text-sm text-gray-400 line-through;
+      @apply text-xs text-gray-400 line-through;
     }
   }
 

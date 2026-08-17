@@ -79,25 +79,80 @@
     {% hook 'head:start' %}
     {% hook head %}
     {% block styles %}{% endblock %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ 'app.css' | asset }}">
     <link rel="stylesheet" href="{{ theme.font.path|cdn }}"/>
     <link rel="stylesheet" href="{{ 'fonts/sallaicons.css'|cdn }}"/>
     
+    {% set current_preset = theme.settings.get('theme_color_preset', 'rose_blush') %}
     <style>
         :root {
-            --font-main: '{{theme.font.name}}';
-            --color-primary: {{ theme.color.primary }};
-            --color-primary-dark: {{ theme.color.darker(0.15) }};
-            --color-primary-light: {{ theme.color.lighter(0.15) }};
-            --color-primary-reverse: {{ theme.color.reverse_text }};
-            /* Theme specific variables */
-            --s-radius: .75rem;
+            --font-main: 'Readex Pro', 'Tajawal', '{{theme.font.name}}', -apple-system, BlinkMacSystemFont, sans-serif;
+            --s-radius: 1rem;
+            --s-radius-lg: 1.5rem;
+            --s-radius-pill: 9999px;
+
+            {% if current_preset == 'silk_gold' %}
+                --color-primary: #1C1917;
+                --color-primary-dark: #000000;
+                --color-primary-light: #F5F3EF;
+                --color-primary-reverse: #FFFFFF;
+                --lady-accent: #C5A880;
+                --lady-accent-light: #FAF5EE;
+                --lady-surface: #FAF8F5;
+                --lady-card: #FFFFFF;
+                --lady-border: #EBE5DC;
+            {% elseif current_preset == 'nude_mocha' %}
+                --color-primary: #A37B5C;
+                --color-primary-dark: #845E42;
+                --color-primary-light: #FAF7F2;
+                --color-primary-reverse: #FFFFFF;
+                --lady-accent: #D4B89B;
+                --lady-accent-light: #FAF4EE;
+                --lady-surface: #FAF7F2;
+                --lady-card: #FFFFFF;
+                --lady-border: #EFE7DE;
+            {% elseif current_preset == 'soft_lavender' %}
+                --color-primary: #93739B;
+                --color-primary-dark: #74547C;
+                --color-primary-light: #F7F4F9;
+                --color-primary-reverse: #FFFFFF;
+                --lady-accent: #BFA4C6;
+                --lady-accent-light: #FAF6FB;
+                --lady-surface: #FBF9FC;
+                --lady-card: #FFFFFF;
+                --lady-border: #F0E8F3;
+            {% elseif current_preset == 'custom' %}
+                --color-primary: {{ theme.color.primary }};
+                --color-primary-dark: {{ theme.color.darker(0.15) }};
+                --color-primary-light: {{ theme.color.lighter(0.15) }};
+                --color-primary-reverse: {{ theme.color.reverse_text }};
+                --lady-accent: {{ theme.color.primary }};
+                --lady-accent-light: {{ theme.color.lighter(0.1) }};
+                --lady-surface: #FCFAF8;
+                --lady-card: #FFFFFF;
+                --lady-border: #F0EAE3;
+            {% else %}
+                {# Rose & Blush (Default) #}
+                --color-primary: #C4737F;
+                --color-primary-dark: #A3535F;
+                --color-primary-light: #FDF2F4;
+                --color-primary-reverse: #FFFFFF;
+                --lady-accent: #E8A598;
+                --lady-accent-light: #FDF7F5;
+                --lady-surface: #FCFAF8;
+                --lady-card: #FFFFFF;
+                --lady-border: #F4EBE8;
+            {% endif %}
         }
     </style>
     {# tracking services, custom css feature. #}
     {% hook 'head:end' %}
 </head>
-<body id="app" class="theme-raed overflow-x-hidden {% hook 'body:classes' %}
+<body id="app" class="theme-lady theme-raed overflow-x-hidden {% hook 'body:classes' %}
+  preset-{{ current_preset }}
   {{ theme.settings.get('footer_is_dark') ? ' footer-is-dark' : ' footer-is-light' }}
   {{ theme.settings.get('topnav_is_dark') ? ' topnav-is-dark' : '' }}
   {{ theme.settings.get('sticky_add_to_cart') ? ' is-sticky-product-bar' : '' }}

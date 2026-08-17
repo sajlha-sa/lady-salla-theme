@@ -130,22 +130,22 @@ salla-button {
 
   /* Button Variants */
   &--danger {
-    @apply bg-red-400 text-white hover:opacity-80;
+    @apply bg-red-400 text-white hover:opacity-90 rounded-xl transition-all;
   }
 
   &--primary {
-    @apply text-primary-reverse border border-primary bg-primary;
+    @apply text-primary-reverse border border-primary bg-primary rounded-xl hover:opacity-95 hover:shadow-md transition-all duration-300;
   }
 
   &--outline-primary {
-    @apply border border-primary text-primary hover:bg-primary hover:text-primary-reverse;
+    @apply border border-primary text-primary hover:bg-primary hover:text-primary-reverse rounded-xl transition-all duration-300;
   }
 
   &--outline {
-    @apply text-gray-400 bg-white hover:bg-primary hover:text-white hover:border-primary shadow-sm border border-gray-200;
+    @apply text-gray-500 bg-white hover:bg-primary hover:text-white hover:border-primary shadow-sm border border-lady-border rounded-xl transition-all duration-300;
 
     &.light {
-      @apply bg-transparent text-white border-white;
+      @apply bg-transparent text-white border-white rounded-xl;
     }
   }
 

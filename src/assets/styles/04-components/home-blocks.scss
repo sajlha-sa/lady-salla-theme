@@ -357,33 +357,82 @@
 
   &--features{
     &__item{
-      @apply cursor-pointer bg-white transition-shadow duration-500 hover:shadow-default rounded-md flex-grow flex flex-col items-center px-4 py-8 md:px-8 text-center;
+      @apply cursor-pointer bg-white transition-all duration-500 rounded-2xl flex-grow flex flex-col items-center px-5 py-7 md:px-8 text-center border border-lady-border hover:border-primary hover:-translate-y-1;
+      box-shadow: 0 4px 20px -4px rgba(28, 25, 23, 0.04);
+      &:hover {
+        box-shadow: 0 16px 32px -8px rgba(196, 115, 127, 0.12);
+      }
 
       &:first-child{
         @apply col-span-2 md:col-span-1;
       }
 
       .feature-icon{
-        @apply mb-3 bg-primary w-16 h-16 rounded-full flex items-center justify-center overflow-hidden;
+        @apply mb-4 bg-gray-100 w-16 h-16 rounded-full flex items-center justify-center overflow-hidden transition-all duration-300;
 
         i{
-          @apply text-primary-reverse text-3xl;
+          @apply text-primary text-2xl transition-transform duration-300;
         }
       }
 
       h2{
-        @apply font-bold text-sm text-gray-800 mb-1;
+        @apply font-bold text-sm text-gray-800 mb-1.5;
       }
 
       p{
-        @apply text-sm text-gray-500;
+        @apply text-xs text-gray-500 leading-relaxed;
       }
 
       &:hover {
-        .feature-icon i {
-          animation: toRightFromLeft 0.3s forwards;
+        .feature-icon {
+          @apply bg-primary scale-105;
+          i {
+            @apply text-primary-reverse;
+          }
         }
       }
+    }
+  }
+}
+
+/* Category Stories (Instagram Style Highlights) */
+.lady-category-stories {
+  @apply py-6 overflow-hidden;
+
+  .stories-scroll-container {
+    @apply flex items-center gap-4 sm:gap-6 overflow-x-auto pb-3 pt-1 px-2 snap-x;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .story-item {
+    @apply flex flex-col items-center flex-shrink-0 cursor-pointer snap-start transition-transform duration-300 hover:scale-105;
+    width: 80px;
+
+    @screen sm {
+      width: 96px;
+    }
+
+    .story-ring {
+      @apply p-0.5 rounded-full bg-gradient-to-tr from-primary to-transparent mb-2 transition-all duration-300;
+    }
+
+    .story-avatar {
+      @apply w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-white overflow-hidden bg-gray-100 flex items-center justify-center shadow-sm;
+      img {
+        @apply w-full h-full object-cover transition-transform duration-500;
+      }
+    }
+
+    &:hover .story-avatar img {
+      @apply scale-110;
+    }
+
+    .story-title {
+      @apply text-xs text-gray-700 font-medium text-center truncate max-w-full leading-tight;
     }
   }
 }
