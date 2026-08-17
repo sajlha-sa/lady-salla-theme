@@ -384,6 +384,314 @@
     ],
     "components": [
         {
+            "key": "lady-hero-promo-uuid",
+            "title": {
+                "en": "Hero Promotional Showcase - Lady",
+                "ar": "واجهة ترويجية - ليدي"
+            },
+            "icon": "sicon-image-carousel",
+            "path": "home.lady-hero-promo",
+            "fields": [
+                {
+                    "id": "title",
+                    "type": "string",
+                    "label": "العنوان الرئيسي",
+                    "value": "هدية لكل مناسبة... لمسة تجعلها لا تُنسى"
+                },
+                {
+                    "id": "description",
+                    "type": "string",
+                    "format": "textarea",
+                    "label": "الوصف الترويجي",
+                    "value": "اكتشفي هدايا وتصاميم مختارة بعناية، مع تغليف فاخر وتخصيص يجعل كل مناسبة أكثر تميزاً وسحراً."
+                },
+                {
+                    "id": "btn_text",
+                    "type": "string",
+                    "label": "نص الزر",
+                    "value": "تسوقي الآن"
+                },
+                {
+                    "id": "btn_url",
+                    "type": "string",
+                    "label": "رابط الزر",
+                    "value": "/products"
+                },
+                {
+                    "id": "main_image",
+                    "type": "string",
+                    "format": "image",
+                    "label": "الصورة الرئيسية (بورتريه)",
+                    "value": "https://cdn.salla.sa/ZrBEO/MopzhoqpTkDObcKc8Q8n77AuydanfsGXdZO7iinH.jpg"
+                },
+                {
+                    "id": "secondary_image",
+                    "type": "string",
+                    "format": "image",
+                    "label": "الصورة الثانوية (مربعة)",
+                    "value": "https://cdn.salla.sa/ZrBEO/3gOhYSaIhaHxhH2IHWxJYDl9JHwxP6dGKiZFSq4K.jpg"
+                }
+            ]
+        },
+        {
+            "key": "lady-categories-showcase-uuid",
+            "title": {
+                "en": "Store Categories Showcase - Lady",
+                "ar": "تصنيفات المتجر - ليدي"
+            },
+            "icon": "sicon-layout-grid",
+            "path": "home.lady-categories-showcase",
+            "fields": [
+                {
+                    "id": "title",
+                    "type": "string",
+                    "label": "العنوان",
+                    "value": "اختاري ما يناسبك"
+                },
+                {
+                    "id": "description",
+                    "type": "string",
+                    "format": "textarea",
+                    "label": "الوصف",
+                    "value": "تسوقي من مجموعات مختارة بعناية تجمع بين الأناقة والتفاصيل التي تضيف لمسة مميزة لكل مناسبة."
+                }
+            ]
+        },
+        {
+            "key": "lady-arch-promo-uuid",
+            "title": {
+                "en": "Arch Promo + Products - Lady",
+                "ar": "قوس ترويجي + شريط منتجات - ليدي"
+            },
+            "icon": "sicon-sparkle",
+            "path": "home.lady-arch-promo",
+            "fields": [
+                {
+                    "id": "arch_title",
+                    "type": "string",
+                    "label": "عنوان القوس",
+                    "value": "إكسسوارات ومجوهرات"
+                },
+                {
+                    "id": "arch_description",
+                    "type": "string",
+                    "format": "textarea",
+                    "label": "وصف القوس",
+                    "value": "من الهدايا المخصصة إلى البوكسات الفاخرة، كل قطعة صُممت لتمنح مناسباتك لمسة استثنائية."
+                },
+                {
+                    "id": "arch_image",
+                    "type": "string",
+                    "format": "image",
+                    "label": "صورة داخل القوس",
+                    "value": "https://cdn.salla.sa/ZrBEO/3gOhYSaIhaHxhH2IHWxJYDl9JHwxP6dGKiZFSq4K.jpg"
+                },
+                {
+                    "id": "btn_text",
+                    "type": "string",
+                    "label": "نص الزر",
+                    "value": "تسوقي الآن"
+                }
+            ]
+        },
+        {
+            "key": "lady-collection-cards-uuid",
+            "title": {
+                "en": "Collection Cards - Lady",
+                "ar": "بطاقات المجموعات - ليدي"
+            },
+            "icon": "sicon-newspaper",
+            "path": "home.lady-collection-cards",
+            "fields": [
+                {
+                    "id": "cards",
+                    "type": "collection",
+                    "format": "collection",
+                    "label": "البطاقات",
+                    "item_label": "بطاقة مجموعة",
+                    "value": [
+                        {
+                            "cards.title": "هديتك المثالية هنا",
+                            "cards.subtitle": "مجوهرات راقية وهدايا مميزة لكل المناسبات",
+                            "cards.image": "https://cdn.salla.sa/ZrBEO/MopzhoqpTkDObcKc8Q8n77AuydanfsGXdZO7iinH.jpg",
+                            "cards.url": "/products"
+                        },
+                        {
+                            "cards.title": "لمسة فخامة تليق بك",
+                            "cards.subtitle": "أجمل الإكسسوارات والمجوهرات بأحدث التصاميم",
+                            "cards.image": "https://cdn.salla.sa/ZrBEO/3gOhYSaIhaHxhH2IHWxJYDl9JHwxP6dGKiZFSq4K.jpg",
+                            "cards.url": "/products"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "id": "cards.title",
+                            "type": "string",
+                            "label": "العنوان"
+                        },
+                        {
+                            "id": "cards.subtitle",
+                            "type": "string",
+                            "label": "الوصف المختصر"
+                        },
+                        {
+                            "id": "cards.image",
+                            "type": "string",
+                            "format": "image",
+                            "label": "صورة الخلفية"
+                        },
+                        {
+                            "id": "cards.url",
+                            "type": "string",
+                            "label": "رابط الزر"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "lady-product-hotspots-uuid",
+            "title": {
+                "en": "Product Hotspots Lookbook - Lady",
+                "ar": "مجموعة المنتجات (نقاط تفاعلية) - ليدي"
+            },
+            "icon": "sicon-tag",
+            "path": "home.lady-product-hotspots",
+            "fields": [
+                {
+                    "id": "bg_image",
+                    "type": "string",
+                    "format": "image",
+                    "label": "صورة اللوك بوك",
+                    "value": "https://cdn.salla.sa/ZrBEO/MopzhoqpTkDObcKc8Q8n77AuydanfsGXdZO7iinH.jpg"
+                }
+            ]
+        },
+        {
+            "key": "lady-countdown-sale-uuid",
+            "title": {
+                "en": "Flash Sale Countdown - Lady",
+                "ar": "عروض بعداد تنازلي - ليدي"
+            },
+            "icon": "sicon-history",
+            "path": "home.lady-countdown-sale",
+            "fields": [
+                {
+                    "id": "title",
+                    "type": "string",
+                    "label": "عنوان العرض",
+                    "value": "عروض استثنائية لفترة محدودة"
+                },
+                {
+                    "id": "description",
+                    "type": "string",
+                    "format": "textarea",
+                    "label": "وصف العرض",
+                    "value": "اغتنمي الفرصة واستمتعي بخصومات مختارة على أجمل الهدايا والإكسسوارات قبل انتهاء العرض."
+                },
+                {
+                    "id": "days",
+                    "type": "string",
+                    "label": "الأيام",
+                    "value": "04"
+                },
+                {
+                    "id": "hours",
+                    "type": "string",
+                    "label": "الساعات",
+                    "value": "11"
+                },
+                {
+                    "id": "minutes",
+                    "type": "string",
+                    "label": "الدقائق",
+                    "value": "30"
+                },
+                {
+                    "id": "seconds",
+                    "type": "string",
+                    "label": "الثواني",
+                    "value": "02"
+                },
+                {
+                    "id": "btn_text",
+                    "type": "string",
+                    "label": "نص الزر",
+                    "value": "تسوقي العروض"
+                }
+            ]
+        },
+        {
+            "key": "lady-marquee-uuid",
+            "title": {
+                "en": "Infinite Moving Marquee - Lady",
+                "ar": "شريط متحرك (ماركيه) - ليدي"
+            },
+            "icon": "sicon-marquee",
+            "path": "home.lady-marquee",
+            "fields": []
+        },
+        {
+            "key": "lady-special-banner-uuid",
+            "title": {
+                "en": "Special Spotlight Banner - Lady",
+                "ar": "بانر خاص - ليدي"
+            },
+            "icon": "sicon-image",
+            "path": "home.lady-special-banner",
+            "fields": [
+                {
+                    "id": "title_right",
+                    "type": "string",
+                    "label": "النص الأيمن",
+                    "value": "خاتم"
+                },
+                {
+                    "id": "title_left",
+                    "type": "string",
+                    "label": "النص الأيسر",
+                    "value": "مميز"
+                },
+                {
+                    "id": "center_image",
+                    "type": "string",
+                    "format": "image",
+                    "label": "صورة الدائرة المركزة",
+                    "value": "https://cdn.salla.sa/ZrBEO/3gOhYSaIhaHxhH2IHWxJYDl9JHwxP6dGKiZFSq4K.jpg"
+                }
+            ]
+        },
+        {
+            "key": "lady-faq-uuid",
+            "title": {
+                "en": "FAQ Accordion - Lady",
+                "ar": "أسئلة شائعة - ليدي"
+            },
+            "icon": "sicon-chat-conversation",
+            "path": "home.lady-faq",
+            "fields": [
+                {
+                    "id": "badge",
+                    "type": "string",
+                    "label": "الشارة العلوية",
+                    "value": "نحن هنا لمساعدتكِ"
+                },
+                {
+                    "id": "title",
+                    "type": "string",
+                    "label": "العنوان",
+                    "value": "الأسئلة الشائعة"
+                },
+                {
+                    "id": "description",
+                    "type": "string",
+                    "format": "textarea",
+                    "label": "الوصف",
+                    "value": "كل ما تحتاجين معرفته حول الشحن، الطلبات، وسياسات الاسترجاع جمعناه لكِ في مكان واحد."
+                }
+            ]
+        },
+        {
             "key": "186b3f4f-25cf-4d3c-abca-cef7eed6f0ab",
             "title": {
                 "en": "Enhances Animated Images",

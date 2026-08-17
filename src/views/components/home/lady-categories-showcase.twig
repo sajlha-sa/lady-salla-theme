@@ -1,0 +1,49 @@
+{#
+| Variable                          | Type       | Description                                         |
+|-----------------------------------|------------|-----------------------------------------------------|
+| component.title                   | string     | Block title                                         |
+| component.description             | string     | Subtitle                                            |
+| component.categories              | object[]   | List of categories (title, image, url)              |
+| position                          | int        | Block position                                      |
+#}
+<section data-testid="store-home-lady-categories-showcase" class="s-block lady-categories-showcase container">
+    <div class="section-header">
+        <h2>{{ component.title|default('اختاري ما يناسبك') }}</h2>
+        <p>{{ component.description|default('تسوقي من مجموعات مختارة بعناية تجمع بين الأناقة والتفاصيل التي تضيف لمسة مميزة لكل مناسبة.') }}</p>
+    </div>
+
+    <div class="categories-gallery">
+        {% if component.categories|length %}
+            {% for cat in component.categories %}
+                <a href="{{ cat.url|default('#') }}" class="cat-portrait-card group">
+                    <img src="{{ cat.image|default('https://cdn.salla.sa/ZrBEO/3gOhYSaIhaHxhH2IHWxJYDl9JHwxP6dGKiZFSq4K.jpg') }}" alt="{{ cat.title }}" loading="lazy" />
+                    <div class="card-overlay">
+                        <span class="cat-title">{{ cat.title }}</span>
+                    </div>
+                </a>
+            {% endfor %}
+        {% else %}
+            <!-- Default Placeholder Items -->
+            <a href="#" class="cat-portrait-card group">
+                <img src="https://cdn.salla.sa/ZrBEO/MopzhoqpTkDObcKc8Q8n77AuydanfsGXdZO7iinH.jpg" alt="خواتم" loading="lazy" />
+                <div class="card-overlay"><span class="cat-title">خواتم ومجوهرات</span></div>
+            </a>
+            <a href="#" class="cat-portrait-card group">
+                <img src="https://cdn.salla.sa/ZrBEO/3gOhYSaIhaHxhH2IHWxJYDl9JHwxP6dGKiZFSq4K.jpg" alt="حلقان" loading="lazy" />
+                <div class="card-overlay"><span class="cat-title">حلقان وأقراط</span></div>
+            </a>
+            <a href="#" class="cat-portrait-card group">
+                <img src="https://cdn.salla.sa/ZrBEO/MopzhoqpTkDObcKc8Q8n77AuydanfsGXdZO7iinH.jpg" alt="سلاسل" loading="lazy" />
+                <div class="card-overlay"><span class="cat-title">سلاسل وعقود</span></div>
+            </a>
+            <a href="#" class="cat-portrait-card group">
+                <img src="https://cdn.salla.sa/ZrBEO/3gOhYSaIhaHxhH2IHWxJYDl9JHwxP6dGKiZFSq4K.jpg" alt="انسيالات" loading="lazy" />
+                <div class="card-overlay"><span class="cat-title">أساور وانسيالات</span></div>
+            </a>
+            <a href="#" class="cat-portrait-card group">
+                <img src="https://cdn.salla.sa/ZrBEO/MopzhoqpTkDObcKc8Q8n77AuydanfsGXdZO7iinH.jpg" alt="ساعات" loading="lazy" />
+                <div class="card-overlay"><span class="cat-title">ساعات فاخرة</span></div>
+            </a>
+        {% endif %}
+    </div>
+</section>

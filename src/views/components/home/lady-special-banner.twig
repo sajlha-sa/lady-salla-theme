@@ -1,0 +1,23 @@
+{#
+| Variable                          | Type       | Description                                         |
+|-----------------------------------|------------|-----------------------------------------------------|
+| component.title_right             | string     | Right text (e.g. "خاتم")                            |
+| component.title_left              | string     | Left text (e.g. "مميز")                             |
+| component.center_image            | string     | Circular image cutout                               |
+| component.bg_image                | string     | Background silk pattern                             |
+| component.url                     | string     | Link URL                                            |
+| position                          | int        | Block position                                      |
+#}
+<section data-testid="store-home-lady-special-banner" class="s-block lady-special-banner container">
+    <a href="{{ component.url|default('/products') }}" class="special-banner-card group block">
+        <img src="{{ component.bg_image|default('https://cdn.salla.sa/ZrBEO/MopzhoqpTkDObcKc8Q8n77AuydanfsGXdZO7iinH.jpg') }}" alt="Background" class="bg-pattern" loading="lazy" />
+        
+        <span class="banner-title right-title hidden sm:block">{{ component.title_right|default('خاتم') }}</span>
+        
+        <div class="focal-ellipse group-hover:scale-105 transition-transform duration-500">
+            <img src="{{ component.center_image|default('https://cdn.salla.sa/ZrBEO/3gOhYSaIhaHxhH2IHWxJYDl9JHwxP6dGKiZFSq4K.jpg') }}" alt="Spotlight" loading="lazy" />
+        </div>
+
+        <span class="banner-title left-title hidden sm:block">{{ component.title_left|default('مميز') }}</span>
+    </a>
+</section>

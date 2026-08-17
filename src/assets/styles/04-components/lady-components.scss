@@ -1,0 +1,790 @@
+/* ==========================================================================
+   Lady Theme - Luxury Custom Home Components Styles
+   ========================================================================== */
+
+/* 1. Hero Promotional Showcase (الواجهة الترويجية الفاخرة) */
+.lady-hero-promo {
+  position: relative;
+  overflow: hidden;
+  padding: 3rem 0;
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    align-items: center;
+
+    @screen lg {
+      grid-template-columns: 1.1fr 1fr;
+      gap: 3.5rem;
+    }
+  }
+
+  .hero-content {
+    h1 {
+      font-family: var(--font-primary, 'Readex Pro', sans-serif);
+      font-size: 2rem;
+      font-weight: 800;
+      line-height: 1.3;
+      color: #1C1917;
+      margin-bottom: 1rem;
+
+      @screen md {
+        font-size: 2.75rem;
+      }
+    }
+
+    p {
+      color: #78716C;
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+      max-width: 540px;
+    }
+  }
+
+  .stats-bar {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--lady-border, #F0EAE3);
+
+    .stat-item {
+      .stat-num {
+        font-size: 1.75rem;
+        font-weight: 800;
+        color: #1C1917;
+        line-height: 1;
+      }
+      .stat-label {
+        font-size: 0.8rem;
+        color: #A8A29E;
+        margin-top: 0.25rem;
+      }
+    }
+  }
+
+  .hero-visuals {
+    position: relative;
+
+    .main-img-card {
+      border-radius: 1.5rem;
+      overflow: hidden;
+      box-shadow: 0 20px 40px -15px rgba(28, 25, 23, 0.12);
+      border: 4px solid #ffffff;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      &:hover img {
+        transform: scale(1.03);
+      }
+    }
+
+    .secondary-img-card {
+      position: absolute;
+      bottom: -1.5rem;
+      right: -1rem;
+      width: 45%;
+      border-radius: 1.25rem;
+      overflow: hidden;
+      border: 4px solid #ffffff;
+      box-shadow: 0 15px 30px -10px rgba(196, 115, 127, 0.2);
+
+      @screen sm {
+        bottom: -2rem;
+        right: -1.5rem;
+      }
+    }
+
+    .rotating-stamp {
+      position: absolute;
+      top: -1rem;
+      left: -1rem;
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background: #ffffff;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: spin-slow 20s linear infinite;
+      z-index: 10;
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* 2. Store Categories Showcase (تصنيفات المتجر ببطاقات البورتريه) */
+.lady-categories-showcase {
+  padding: 3.5rem 0;
+
+  .section-header {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 2.5rem;
+
+    h2 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: #1C1917;
+      margin-bottom: 0.5rem;
+    }
+    p {
+      color: #78716C;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+  }
+
+  .categories-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+
+    @screen sm {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+
+    @screen lg {
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1.5rem;
+    }
+
+    .cat-portrait-card {
+      position: relative;
+      border-radius: 1.25rem;
+      overflow: hidden;
+      aspect-ratio: 3 / 4.2;
+      box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.06);
+      transition: all 0.4s ease;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+      }
+
+      .card-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(28, 25, 23, 0.75) 100%);
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        padding: 1.5rem 1rem;
+        transition: background 0.3s ease;
+      }
+
+      .cat-title {
+        color: #ffffff;
+        font-weight: 700;
+        font-size: 1.1rem;
+        text-align: center;
+        letter-spacing: 0.02em;
+        transition: transform 0.3s ease;
+      }
+
+      &:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 16px 35px -10px rgba(196, 115, 127, 0.25);
+
+        img {
+          transform: scale(1.08);
+        }
+        .cat-title {
+          transform: translateY(-4px);
+        }
+      }
+    }
+  }
+}
+
+/* 3. Arch Promotional + Products Slider (قوس ترويجي + شريط منتجات) */
+.lady-arch-promo {
+  padding: 3.5rem 0;
+
+  .arch-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    align-items: center;
+
+    @screen lg {
+      grid-template-columns: 380px 1fr;
+      gap: 3rem;
+    }
+  }
+
+  .arch-card {
+    background: #6F4E37; /* Warm mocha / brand bg */
+    border-radius: 2rem;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 440px;
+
+    .arch-rotating-ring {
+      position: absolute;
+      top: 2rem;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      border: 1px dashed rgba(255, 255, 255, 0.3);
+      animation: spin-slow 25s linear infinite;
+      pointer-events: none;
+    }
+
+    .arch-shape {
+      width: 170px;
+      height: 230px;
+      border-radius: 85px 85px 1rem 1rem;
+      overflow: hidden;
+      border: 3px solid rgba(255, 255, 255, 0.8);
+      margin-bottom: 1.5rem;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .arch-text {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 1.5rem;
+    }
+
+    .arch-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #ffffff;
+      color: #1C1917;
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 0.75rem 1.75rem;
+      border-radius: 9999px;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: var(--color-primary, #C4737F);
+        color: #ffffff;
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+
+/* 4. Split Collection Cards (بطاقات المجموعات الفاخرة) */
+.lady-collection-cards {
+  padding: 3rem 0;
+
+  .cards-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+
+    @screen md {
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+  }
+
+  .collection-card {
+    position: relative;
+    border-radius: 1.75rem;
+    overflow: hidden;
+    min-height: 360px;
+    box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.08);
+
+    img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .card-backdrop {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 20%, rgba(28, 25, 23, 0.75) 100%);
+      transition: background 0.4s ease;
+    }
+
+    .card-content {
+      position: absolute;
+      bottom: 0;
+      inset-inline: 0;
+      padding: 2.25rem 2rem;
+      color: #ffffff;
+      z-index: 2;
+
+      h3 {
+        font-size: 1.6rem;
+        font-weight: 800;
+        margin-bottom: 0.5rem;
+        line-height: 1.3;
+      }
+      p {
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.85);
+        margin-bottom: 1.25rem;
+      }
+      .card-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 0.875rem;
+        border-bottom: 1.5px solid #ffffff;
+        padding-bottom: 0.25rem;
+        transition: all 0.3s ease;
+        &:hover {
+          color: var(--color-primary-light, #FDF2F4);
+          border-color: var(--color-primary-light, #FDF2F4);
+          transform: translateX(-4px);
+        }
+      }
+    }
+
+    &:hover {
+      img {
+        transform: scale(1.06);
+      }
+      .card-backdrop {
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 10%, rgba(28, 25, 23, 0.85) 100%);
+      }
+    }
+  }
+}
+
+/* 5. Shoppable Hotspots Lookbook (مجموعة المنتجات بالنقاط التفاعلية) */
+.lady-hotspots-lookbook {
+  padding: 3.5rem 0;
+
+  .lookbook-banner {
+    position: relative;
+    border-radius: 2rem;
+    overflow: hidden;
+    box-shadow: 0 20px 45px -15px rgba(28, 25, 23, 0.12);
+    min-height: 480px;
+
+    img.hero-bg {
+      width: 100%;
+      height: 100%;
+      min-height: 480px;
+      object-fit: cover;
+    }
+
+    .hotspot-dot {
+      position: absolute;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.85);
+      border: 3px solid #ffffff;
+      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10;
+      animation: pulse-ring 2s infinite;
+      transition: all 0.3s ease;
+
+      &::after {
+        content: '';
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--color-primary, #C4737F);
+      }
+
+      &:hover {
+        transform: scale(1.2);
+      }
+
+      .hotspot-popup {
+        position: absolute;
+        bottom: 130%;
+        right: 50%;
+        transform: translateX(50%) scale(0.9);
+        background: #ffffff;
+        border-radius: 1rem;
+        padding: 0.75rem 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        min-width: 220px;
+        box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.2);
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        z-index: 20;
+
+        img.thumb {
+          width: 50px;
+          height: 50px;
+          border-radius: 0.5rem;
+          object-fit: cover;
+        }
+
+        .details {
+          text-align: right;
+          h4 {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #1C1917;
+            margin-bottom: 0.25rem;
+          }
+          .price {
+            font-size: 0.85rem;
+            font-weight: 800;
+            color: var(--color-primary, #C4737F);
+          }
+        }
+      }
+
+      &:hover .hotspot-popup {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateX(50%) scale(1);
+      }
+    }
+  }
+}
+
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.8); }
+  70% { box-shadow: 0 0 0 14px rgba(255, 255, 255, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+}
+
+/* 6. Flash Sale with Countdown (عروض بعداد تنازلي فاخر) */
+.lady-countdown-sale {
+  padding: 3.5rem 0;
+
+  .sale-card {
+    background: #ffffff;
+    border-radius: 2rem;
+    padding: 3rem 2rem;
+    border: 1px solid var(--lady-border, #F0EAE3);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    align-items: center;
+
+    @screen lg {
+      grid-template-columns: 1.1fr 1fr;
+      padding: 3.5rem 3rem;
+      gap: 3.5rem;
+    }
+  }
+
+  .sale-content {
+    h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #1C1917;
+      margin-bottom: 0.75rem;
+    }
+    p {
+      color: #78716C;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .timer-boxes {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+
+    .time-unit {
+      background: var(--lady-surface, #FCFAF8);
+      border: 1px solid var(--lady-border, #F0EAE3);
+      border-radius: 1rem;
+      padding: 0.75rem 1rem;
+      text-align: center;
+      min-width: 68px;
+
+      .num {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: #1C1917;
+        line-height: 1;
+      }
+      .label {
+        font-size: 0.75rem;
+        color: #A8A29E;
+        margin-top: 0.25rem;
+      }
+    }
+    .colon {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #D6D3D1;
+    }
+  }
+
+  .sale-visuals {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+
+    .visual-item {
+      border-radius: 1.25rem;
+      overflow: hidden;
+      aspect-ratio: 3 / 4;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+/* 7. Infinite Luxury Diagonal/Horizontal Marquee Bands (شريط متحرك ماركيه) */
+.lady-marquee-wrapper {
+  overflow: hidden;
+  padding: 2.5rem 0;
+  position: relative;
+
+  .marquee-band {
+    background: #6F4E37; /* Dark mocha or primary */
+    color: #ffffff;
+    padding: 1rem 0;
+    white-space: nowrap;
+    display: flex;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+
+    &.band-crossed-1 {
+      transform: rotate(-2deg);
+      margin-bottom: -1rem;
+      z-index: 2;
+    }
+    &.band-crossed-2 {
+      transform: rotate(2deg);
+      background: var(--color-primary, #C4737F);
+      z-index: 1;
+    }
+
+    .track {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      animation: marquee-scroll 25s linear infinite;
+    }
+
+    .item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+
+      i {
+        font-size: 1.25rem;
+      }
+    }
+  }
+}
+
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(50%); }
+}
+
+/* 8. Special Banner (بانر خاص بيضاوي فاخر) */
+.lady-special-banner {
+  padding: 3rem 0;
+
+  .special-banner-card {
+    position: relative;
+    border-radius: 2rem;
+    overflow: hidden;
+    min-height: 280px;
+    background: #EADBC8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.06);
+
+    img.bg-pattern {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.85;
+    }
+
+    .focal-ellipse {
+      position: relative;
+      z-index: 2;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid #ffffff;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .banner-title {
+      position: absolute;
+      z-index: 3;
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: #1C1917;
+
+      &.left-title {
+        left: 15%;
+      }
+      &.right-title {
+        right: 15%;
+      }
+    }
+  }
+}
+
+/* 9. Editorial FAQ Split Layout (أسئلة شائعة فاخرة) */
+.lady-faq-section {
+  padding: 4rem 0;
+
+  .faq-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    align-items: flex-start;
+
+    @screen lg {
+      grid-template-columns: 1fr 1.3fr;
+      gap: 4rem;
+    }
+  }
+
+  .faq-intro {
+    .badge {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--color-primary, #C4737F);
+      margin-bottom: 0.5rem;
+      display: inline-block;
+    }
+    h2 {
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: #1C1917;
+      margin-bottom: 1rem;
+    }
+    p {
+      color: #78716C;
+      font-size: 0.95rem;
+      line-height: 1.8;
+    }
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .faq-item {
+      background: #ffffff;
+      border: 1px solid var(--lady-border, #F0EAE3);
+      border-radius: 1.25rem;
+      overflow: hidden;
+      transition: all 0.3s ease;
+
+      .faq-question {
+        padding: 1.25rem 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+        font-weight: 700;
+        font-size: 1rem;
+        color: #1C1917;
+        user-select: none;
+
+        .icon {
+          width: 28px;
+          height: 28px;
+          border-radius: 50%;
+          background: var(--lady-surface, #FCFAF8);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.1rem;
+          color: #78716C;
+          transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+        }
+      }
+
+      .faq-answer {
+        padding: 0 1.5rem 1.25rem;
+        color: #78716C;
+        font-size: 0.9rem;
+        line-height: 1.7;
+        display: none;
+      }
+
+      &.open {
+        border-color: var(--color-primary-light, #FDF2F4);
+        box-shadow: 0 10px 25px -5px rgba(196, 115, 127, 0.12);
+
+        .faq-question .icon {
+          transform: rotate(45deg);
+          background: var(--color-primary, #C4737F);
+          color: #ffffff;
+        }
+
+        .faq-answer {
+          display: block;
+        }
+      }
+    }
+  }
+}

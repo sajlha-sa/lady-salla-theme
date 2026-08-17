@@ -1,0 +1,41 @@
+{#
+| Variable                          | Type       | Description                                         |
+|-----------------------------------|------------|-----------------------------------------------------|
+| component.arch_title              | string     | Arch text                                           |
+| component.arch_description        | string     | Subtitle in arch card                               |
+| component.arch_image              | string     | Image inside the arch shape                         |
+| component.btn_text                | string     | Button text                                         |
+| component.btn_url                 | string     | Button link                                         |
+| component.products                | object[]   | Products to display in the side slider              |
+| position                          | int        | Block position                                      |
+#}
+<section data-testid="store-home-lady-arch-promo" class="s-block lady-arch-promo container">
+    <div class="arch-grid">
+        <!-- Arch Card -->
+        <div class="arch-card">
+            <!-- Decorative Dashed Ring -->
+            <div class="arch-rotating-ring"></div>
+
+            <!-- Arch Image Container -->
+            <div class="arch-shape">
+                <img src="{{ component.arch_image|default('https://cdn.salla.sa/ZrBEO/3gOhYSaIhaHxhH2IHWxJYDl9JHwxP6dGKiZFSq4K.jpg') }}" alt="{{ component.arch_title }}" loading="lazy" />
+            </div>
+
+            <p class="arch-text">{{ component.arch_description|default('من الهدايا المخصصة إلى البوكسات الفاخرة، كل قطعة صُممت لتمنح مناسباتك لمسة استثنائية.') }}</p>
+
+            <a href="{{ component.btn_url|default('/products') }}" class="arch-btn">
+                {{ component.btn_text|default('تسوقي الآن') }}
+                <i class="sicon-arrow-left text-xs mr-1 rtl:rotate-180"></i>
+            </a>
+        </div>
+
+        <!-- Products Slider -->
+        <div class="products-side-slider">
+            <salla-products-slider 
+                source="selected" 
+                source-value="{{ component.products|map(p => p.id)|json_encode }}" 
+                display-all-url="{{ component.btn_url|default('/products') }}">
+            </salla-products-slider>
+        </div>
+    </div>
+</section>

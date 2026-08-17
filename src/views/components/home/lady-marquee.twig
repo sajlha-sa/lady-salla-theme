@@ -1,0 +1,36 @@
+{#
+| Variable                          | Type       | Description                                         |
+|-----------------------------------|------------|-----------------------------------------------------|
+| component.style                   | string     | 'crossed' or 'straight'                             |
+| component.items                   | object[]   | List of text & icon items                           |
+| position                          | int        | Block position                                      |
+#}
+<section data-testid="store-home-lady-marquee" class="s-block lady-marquee-wrapper">
+    <!-- Band 1 -->
+    <div class="marquee-band band-crossed-1">
+        <div class="track">
+            <div class="item"><i class="sicon-gift text-primary"></i> <span>تغليف فاخر مجاني</span></div>
+            <div class="item"><i class="sicon-shipping-fast"></i> <span>شحن مجاني لكافة المناطق</span></div>
+            <div class="item"><i class="sicon-security-check"></i> <span>دفع آمن 100% عبر مدى وأبل باي</span></div>
+            <div class="item"><i class="sicon-refresh"></i> <span>استبدال واسترجاع سلس خلال 14 يوم</span></div>
+            <div class="item"><i class="sicon-award-ribbon"></i> <span>منتجات أصلية ومضمونة 100%</span></div>
+            <div class="item"><i class="sicon-gift text-primary"></i> <span>تغليف فاخر مجاني</span></div>
+            <div class="item"><i class="sicon-shipping-fast"></i> <span>شحن مجاني لكافة المناطق</span></div>
+            <div class="item"><i class="sicon-security-check"></i> <span>دفع آمن 100% عبر مدى وأبل باي</span></div>
+            <div class="item"><i class="sicon-refresh"></i> <span>استبدال واسترجاع سلس خلال 14 يوم</span></div>
+            <div class="item"><i class="sicon-award-ribbon"></i> <span>منتجات أصلية ومضمونة 100%</span></div>
+        </div>
+    </div>
+
+    <!-- Band 2 (Crossed Opposite Direction) -->
+    <div class="marquee-band band-crossed-2">
+        <div class="track" style="animation-direction: reverse; animation-duration: 30s;">
+            <div class="item"><i class="sicon-star2"></i> <span>خامات وأقمشة فاخرة منتقاة بعناية</span></div>
+            <div class="item"><i class="sicon-heart"></i> <span>صُممت لتبرز أناقتكِ في كل مناسبة</span></div>
+            <div class="item"><i class="sicon-dollar-circle"></i> <span>تقسيط مرن مع تمارا وتابي بدون فوائد</span></div>
+            <div class="item"><i class="sicon-star2"></i> <span>خامات وأقمشة فاخرة منتقاة بعناية</span></div>
+            <div class="item"><i class="sicon-heart"></i> <span>صُممت لتبرز أناقتكِ في كل مناسبة</span></div>
+            <div class="item"><i class="sicon-dollar-circle"></i> <span>تقسيط مرن مع تمارا وتابي بدون فوائد</span></div>
+        </div>
+    </div>
+</section>

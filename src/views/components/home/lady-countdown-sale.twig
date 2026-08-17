@@ -1,0 +1,62 @@
+{#
+| Variable                          | Type       | Description                                         |
+|-----------------------------------|------------|-----------------------------------------------------|
+| component.title                   | string     | Sale headline                                       |
+| component.description             | string     | Subtitle                                            |
+| component.btn_text                | string     | CTA button text                                     |
+| component.btn_url                 | string     | CTA link                                            |
+| component.days                    | string     | E.g. "04"                                           |
+| component.hours                   | string     | E.g. "11"                                           |
+| component.minutes                 | string     | E.g. "30"                                           |
+| component.seconds                 | string     | E.g. "02"                                           |
+| component.image_1                 | string     | First photo                                         |
+| component.image_2                 | string     | Second photo                                        |
+| position                          | int        | Block position                                      |
+#}
+<section data-testid="store-home-lady-countdown-sale" class="s-block lady-countdown-sale container">
+    <div class="sale-card">
+        <!-- Content Side -->
+        <div class="sale-content text-start">
+            <h2>{{ component.title|default('عروض استثنائية لفترة محدودة') }}</h2>
+            <p>{{ component.description|default('اغتنمي الفرصة واستمتعي بخصومات مختارة على أجمل الهدايا والإكسسوارات قبل انتهاء العرض.') }}</p>
+
+            <!-- Countdown Timer -->
+            <div class="timer-boxes" data-countdown="true">
+                <div class="time-unit">
+                    <div class="num" data-days>{{ component.days|default('04') }}</div>
+                    <div class="label">أيام</div>
+                </div>
+                <span class="colon">:</span>
+                <div class="time-unit">
+                    <div class="num" data-hours>{{ component.hours|default('11') }}</div>
+                    <div class="label">ساعات</div>
+                </div>
+                <span class="colon">:</span>
+                <div class="time-unit">
+                    <div class="num" data-minutes>{{ component.minutes|default('30') }}</div>
+                    <div class="label">دقائق</div>
+                </div>
+                <span class="colon">:</span>
+                <div class="time-unit">
+                    <div class="num" data-seconds>{{ component.seconds|default('02') }}</div>
+                    <div class="label">ثواني</div>
+                </div>
+            </div>
+
+            <a href="{{ component.btn_url|default('/offers') }}" class="btn btn--primary btn--rounded-full px-8 py-3 text-sm font-bold shadow-md shadow-primary/20 hover:shadow-primary/40 transition-all">
+                {{ component.btn_text|default('تسوقي العروض') }}
+                <i class="sicon-arrow-left text-xs mr-2 rtl:rotate-180"></i>
+            </a>
+        </div>
+
+        <!-- Visuals Side -->
+        <div class="sale-visuals">
+            <div class="visual-item">
+                <img src="{{ component.image_1|default('https://cdn.salla.sa/ZrBEO/MopzhoqpTkDObcKc8Q8n77AuydanfsGXdZO7iinH.jpg') }}" alt="Sale Item 1" loading="lazy" />
+            </div>
+            <div class="visual-item">
+                <img src="{{ component.image_2|default('https://cdn.salla.sa/ZrBEO/3gOhYSaIhaHxhH2IHWxJYDl9JHwxP6dGKiZFSq4K.jpg') }}" alt="Sale Item 2" loading="lazy" />
+            </div>
+        </div>
+    </div>
+</section>

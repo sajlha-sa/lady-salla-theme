@@ -1,0 +1,55 @@
+{#
+| Variable                          | Type       | Description                                         |
+|-----------------------------------|------------|-----------------------------------------------------|
+| component.cards                   | object[]   | List of collection cards (title, subtitle, image, url) |
+| position                          | int        | Block position                                      |
+#}
+<section data-testid="store-home-lady-collection-cards" class="s-block lady-collection-cards container">
+    <div class="cards-grid">
+        {% if component.cards|length %}
+            {% for card in component.cards %}
+                <div class="collection-card group">
+                    <img src="{{ card.image|default('https://cdn.salla.sa/ZrBEO/MopzhoqpTkDObcKc8Q8n77AuydanfsGXdZO7iinH.jpg') }}" alt="{{ card.title }}" loading="lazy" />
+                    <div class="card-backdrop"></div>
+                    <div class="card-content">
+                        <h3>{{ card.title }}</h3>
+                        {% if card.subtitle %}
+                            <p>{{ card.subtitle }}</p>
+                        {% endif %}
+                        <a href="{{ card.url|default('/products') }}" class="card-link">
+                            <span>{{ card.btn_text|default('تسوقي الآن') }}</span>
+                            <i class="sicon-arrow-left text-xs rtl:rotate-180"></i>
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <!-- Default 2 Luxury Cards -->
+            <div class="collection-card group">
+                <img src="https://cdn.salla.sa/ZrBEO/MopzhoqpTkDObcKc8Q8n77AuydanfsGXdZO7iinH.jpg" alt="هديتك المثالية هنا" loading="lazy" />
+                <div class="card-backdrop"></div>
+                <div class="card-content">
+                    <h3>هديتك المثالية هنا</h3>
+                    <p>مجوهرات راقية وهدايا مميزة لكل المناسبات</p>
+                    <a href="/products" class="card-link">
+                        <span>تسوقي الآن</span>
+                        <i class="sicon-arrow-left text-xs rtl:rotate-180"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="collection-card group">
+                <img src="https://cdn.salla.sa/ZrBEO/3gOhYSaIhaHxhH2IHWxJYDl9JHwxP6dGKiZFSq4K.jpg" alt="لمسة فخامة تليق بك" loading="lazy" />
+                <div class="card-backdrop"></div>
+                <div class="card-content">
+                    <h3>لمسة فخامة تليق بك</h3>
+                    <p>أجمل الإكسسوارات والمجوهرات بأحدث التصاميم</p>
+                    <a href="/products" class="card-link">
+                        <span>تسوقي الآن</span>
+                        <i class="sicon-arrow-left text-xs rtl:rotate-180"></i>
+                    </a>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</section>

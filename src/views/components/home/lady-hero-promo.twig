@@ -1,0 +1,74 @@
+{#
+| Variable                          | Type    | Description                                             |
+|-----------------------------------|---------|---------------------------------------------------------|
+| component.title                   | string  | Main headline                                           |
+| component.description             | string  | Subtitle / description                                  |
+| component.btn_text                | string  | CTA button text                                         |
+| component.btn_url                 | string  | CTA button URL                                          |
+| component.main_image              | string  | Main editorial photo                                    |
+| component.secondary_image         | string  | Floating secondary photo                                |
+| component.stat_1_num              | string  | E.g. "98%"                                              |
+| component.stat_1_label            | string  | E.g. "نسبة رضا العميلات"                                |
+| component.stat_2_num              | string  | E.g. "+10"                                              |
+| component.stat_2_label            | string  | E.g. "سنوات خبرة"                                       |
+| component.stat_3_num              | string  | E.g. "+500"                                             |
+| component.stat_3_label            | string  | E.g. "عميلة سعيدة"                                      |
+| position                          | int     | Block position                                          |
+#}
+<section data-testid="store-home-lady-hero-promo" class="s-block lady-hero-promo container">
+    <div class="hero-grid">
+        <!-- Visuals Column -->
+        <div class="hero-visuals order-2 lg:order-1">
+            <div class="main-img-card aspect-[4/5] sm:aspect-[3/4]">
+                <img src="{{ component.main_image|default('https://cdn.salla.sa/ZrBEO/MopzhoqpTkDObcKc8Q8n77AuydanfsGXdZO7iinH.jpg') }}" alt="{{ component.title }}" loading="lazy" />
+            </div>
+
+            {% if component.secondary_image %}
+                <div class="secondary-img-card aspect-square">
+                    <img src="{{ component.secondary_image }}" alt="Detail" loading="lazy" class="w-full h-full object-cover" />
+                </div>
+            {% endif %}
+
+            <!-- Rotating Luxury Seal -->
+            <div class="rotating-stamp hidden sm:flex">
+                <svg viewBox="0 0 100 100" class="w-full h-full text-gray-800">
+                    <path id="curve-{{ position }}" fill="transparent" d="M 50 50 m -37 0 a 37 37 0 1 1 74 0 a 37 37 0 1 1 -74 0" />
+                    <text font-size="9" font-weight="700" letter-spacing="2" fill="currentColor">
+                        <textPath href="#curve-{{ position }}" startOffset="0%">
+                            • LADY LUXURY COLLECTION • AUTHENTIC •
+                        </textPath>
+                    </text>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Content Column -->
+        <div class="hero-content order-1 lg:order-2 text-start">
+            <h1>{{ component.title|default('هدية لكل مناسبة... لمسة تجعلها لا تُنسى') }}</h1>
+            <p>{{ component.description|default('اكتشفي هدايا وتصاميم مختارة بعناية، مع تغليف فاخر وتخصيص يجعل كل مناسبة أكثر تميزاً وسحراً.') }}</p>
+
+            <div class="flex items-center gap-4">
+                <a href="{{ component.btn_url|default('/products') }}" class="btn btn--primary btn--rounded-full px-8 py-3.5 text-base font-bold shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all">
+                    {{ component.btn_text|default('تسوقي الآن') }}
+                    <i class="sicon-arrow-left text-sm mr-2 rtl:rotate-180"></i>
+                </a>
+            </div>
+
+            <!-- Stats Bar -->
+            <div class="stats-bar">
+                <div class="stat-item text-center sm:text-start">
+                    <div class="stat-num">{{ component.stat_1_num|default('98%') }}</div>
+                    <div class="stat-label">{{ component.stat_1_label|default('نسبة رضا العميلات') }}</div>
+                </div>
+                <div class="stat-item text-center sm:text-start">
+                    <div class="stat-num">{{ component.stat_2_num|default('+10') }}</div>
+                    <div class="stat-label">{{ component.stat_2_label|default('سنوات خبرة') }}</div>
+                </div>
+                <div class="stat-item text-center sm:text-start">
+                    <div class="stat-num">{{ component.stat_3_num|default('+500') }}</div>
+                    <div class="stat-label">{{ component.stat_3_label|default('عميلة سعيدة') }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

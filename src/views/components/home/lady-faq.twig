@@ -1,0 +1,87 @@
+{#
+| Variable                          | Type       | Description                                         |
+|-----------------------------------|------------|-----------------------------------------------------|
+| component.badge                   | string     | Intro badge text                                    |
+| component.title                   | string     | Section heading                                     |
+| component.description             | string     | Section subtext                                     |
+| component.faqs                    | object[]   | List of FAQs (question, answer)                     |
+| position                          | int        | Block position                                      |
+#}
+<section data-testid="store-home-lady-faq" class="s-block lady-faq-section container">
+    <div class="faq-grid">
+        <!-- Intro Side -->
+        <div class="faq-intro text-start">
+            <span class="badge">{{ component.badge|default('نحن هنا لمساعدتكِ') }}</span>
+            <h2>{{ component.title|default('الأسئلة الشائعة') }}</h2>
+            <p>{{ component.description|default('كل ما تحتاجين معرفته حول الشحن، الطلبات، وسياسات الاسترجاع جمعناه لكِ في مكان واحد لتجربة تسوق أسهل وأكثر راحة.') }}</p>
+        </div>
+
+        <!-- FAQ List Side -->
+        <div class="faq-list">
+            {% if component.faqs|length %}
+                {% for faq in component.faqs %}
+                    <div class="faq-item" onclick="this.classList.toggle('open')">
+                        <div class="faq-question">
+                            <span>{{ faq.question }}</span>
+                            <span class="icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>{{ faq.answer }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <!-- Default FAQs -->
+                <div class="faq-item open" onclick="this.classList.toggle('open')">
+                    <div class="faq-question">
+                        <span>كيف أقدر أسوي طلب؟</span>
+                        <span class="icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>اختاري المنتج الذي ترغبين به، أضيفيه للسلة، ثم اضغطي على إتمام الطلب وحددي طريقة الدفع وعنوان التوصيل لتأكيد الطلب فوراً.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" onclick="this.classList.toggle('open')">
+                    <div class="faq-question">
+                        <span>متى يوصل طلبي؟</span>
+                        <span class="icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>يتم توصيل الطلبات داخل الرياض خلال 24-48 ساعة، ولكافة مدن المملكة خلال 2-4 أيام عمل عبر أفضل شركات الشحن السريع.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" onclick="this.classList.toggle('open')">
+                    <div class="faq-question">
+                        <span>كيف أتتبع الشحنة؟</span>
+                        <span class="icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>فور شحن طلبكِ، ستصلكِ رسالة نصية SMS ورسالة عبر الواتساب تحتوي على رابط التتبع المباشر لخط سير الشحنة.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" onclick="this.classList.toggle('open')">
+                    <div class="faq-question">
+                        <span>وش طرق الدفع المتاحة؟</span>
+                        <span class="icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>نوفر جميع طرق الدفع الآمنة: مدى، أبل باي Apple Pay، فيزا، ماستركارد، بالإضافة إلى خيارات التقسيط المريح مع تمارا وتابي بدون فوائد.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" onclick="this.classList.toggle('open')">
+                    <div class="faq-question">
+                        <span>أقدر أرجع أو أستبدل المنتج؟</span>
+                        <span class="icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>نعم بكل تأكيد! يحق لكِ طلب الاستبدال أو الاسترجاع بكل سهولة خلال 14 يوماً من استلام الطلب وفق الشروط والأحكام.</p>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>

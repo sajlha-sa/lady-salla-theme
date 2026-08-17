@@ -1,0 +1,57 @@
+{#
+| Variable                          | Type       | Description                                         |
+|-----------------------------------|------------|-----------------------------------------------------|
+| component.bg_image                | string     | Main lookbook background photo                      |
+| component.hotspots                | object[]   | List of hotspots (x%, y%, title, price, thumb, url) |
+| position                          | int        | Block position                                      |
+#}
+<section data-testid="store-home-lady-product-hotspots" class="s-block lady-hotspots-lookbook container">
+    <div class="lookbook-banner">
+        <img src="{{ component.bg_image|default('https://cdn.salla.sa/ZrBEO/MopzhoqpTkDObcKc8Q8n77AuydanfsGXdZO7iinH.jpg') }}" alt="Lookbook" class="hero-bg" loading="lazy" />
+
+        {% if component.hotspots|length %}
+            {% for spot in component.hotspots %}
+                <div class="hotspot-dot" style="top: {{ spot.top|default(50) }}%; left: {{ spot.left|default(50) }}%;">
+                    <div class="hotspot-popup">
+                        <img src="{{ spot.thumb|default('https://cdn.salla.sa/ZrBEO/3gOhYSaIhaHxhH2IHWxJYDl9JHwxP6dGKiZFSq4K.jpg') }}" alt="{{ spot.title }}" class="thumb" />
+                        <div class="details">
+                            <h4>{{ spot.title }}</h4>
+                            <div class="price">{{ spot.price }} {{ trans('common.elements.currency') }}</div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <!-- Default 3 Hotspots -->
+            <div class="hotspot-dot" style="top: 35%; left: 55%;">
+                <div class="hotspot-popup">
+                    <img src="https://cdn.salla.sa/ZrBEO/3gOhYSaIhaHxhH2IHWxJYDl9JHwxP6dGKiZFSq4K.jpg" alt="عقد ذهبي فاخر" class="thumb" />
+                    <div class="details">
+                        <h4>عقد شوكر مطلي بالذهب</h4>
+                        <div class="price">280 ر.س</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hotspot-dot" style="top: 42%; left: 30%;">
+                <div class="hotspot-popup">
+                    <img src="https://cdn.salla.sa/ZrBEO/MopzhoqpTkDObcKc8Q8n77AuydanfsGXdZO7iinH.jpg" alt="خاتم متقاطع" class="thumb" />
+                    <div class="details">
+                        <h4>خاتم متقاطع مطلي عيار 18</h4>
+                        <div class="price">190 ر.س</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hotspot-dot" style="top: 65%; left: 40%;">
+                <div class="hotspot-popup">
+                    <img src="https://cdn.salla.sa/ZrBEO/3gOhYSaIhaHxhH2IHWxJYDl9JHwxP6dGKiZFSq4K.jpg" alt="إسوارة بتصميم ناعم" class="thumb" />
+                    <div class="details">
+                        <h4>إسوارة قطرة ماء ناعمة</h4>
+                        <div class="price">220 ر.س</div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</section>
