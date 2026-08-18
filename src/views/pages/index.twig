@@ -6,9 +6,245 @@
 | page.slug        | string     | ex: "cat.show"                                                      |
 #}
 {% extends "layouts.master" %}
+
 {% block content %}
+    {# Render Merchant Customizer Components if set in Salla #}
     {% component home %}
+
+    {# 🌟 Complete Interactive Showcase of all Lady Luxury Components 🌟 #}
+    <div id="lady-complete-showcase" class="lady-showcase-flow">
+        
+        {# 1. Hero Promotional Showcase (واجهة ترويجية) #}
+        {% include 'components.home.lady-hero-promo' with {
+            position: 1,
+            component: {
+                title: 'هدية لكل مناسبة... لمسة تجعلها لا تُنسى',
+                description: 'اكتشفي هدايا وتصاميم مختارة بعناية، مع تغليف فاخر وتخصيص يجعل كل مناسبة أكثر تميزاً وسحراً.',
+                btn_text: 'تسوقي الآن',
+                btn_url: '/products',
+                main_image: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=1200&auto=format&fit=crop',
+                secondary_image: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=800&auto=format&fit=crop',
+                stat_1_num: '98%',
+                stat_1_label: 'نسبة رضا العميلات',
+                stat_2_num: '+10',
+                stat_2_label: 'سنوات خبرة',
+                stat_3_num: '+5,000',
+                stat_3_label: 'عميلة سعيدة'
+            }
+        } %}
+
+        {# 2. Infinite Crossed Marquee (شريط متحرك ماركيه) #}
+        {% include 'components.home.lady-marquee' with { position: 2 } %}
+
+        {# 3. Categories Gallery (تصنيفات المتجر ببطاقات البورتريه) #}
+        {% include 'components.home.lady-categories-showcase' with {
+            position: 3,
+            component: {
+                title: 'اختاري ما يناسب إطلالتكِ',
+                description: 'تسوقي من مجموعات مختارة بعناية تجمع بين الأناقة والتفاصيل التي تضيف لمسة مميزة لكل مناسبة.',
+                categories: [
+                    { title: 'خواتم ومجوهرات', image: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=600&auto=format&fit=crop', url: '/products' },
+                    { title: 'حلقان وأقراط', image: 'https://images.unsplash.com/photo-1630019852942-f89202989a59?q=80&w=600&auto=format&fit=crop', url: '/products' },
+                    { title: 'سلاسل وعقود', image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=600&auto=format&fit=crop', url: '/products' },
+                    { title: 'أساور وانسيالات', image: 'https://images.unsplash.com/photo-1611591475155-4286fa7c2e7f?q=80&w=600&auto=format&fit=crop', url: '/products' },
+                    { title: 'ساعات فاخرة', image: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=600&auto=format&fit=crop', url: '/products' }
+                ]
+            }
+        } %}
+
+        {# 4. Arch Promotional Showcase (قوس ترويجي + شريط منتجات) #}
+        {% include 'components.home.lady-arch-promo' with {
+            position: 4,
+            component: {
+                arch_title: 'إكسسوارات ومجوهرات فاخرة',
+                arch_description: 'من الهدايا المخصصة إلى البوكسات الفاخرة، كل قطعة صُممت لتمنح مناسباتك لمسة استثنائية.',
+                arch_image: 'https://images.unsplash.com/photo-1603561591411-07134e71a2a9?q=80&w=800&auto=format&fit=crop',
+                btn_text: 'تسوقي الآن',
+                btn_url: '/products'
+            }
+        } %}
+
+        {# 5. Split Collection Cards (بطاقات المجموعات الفاخرة) #}
+        {% include 'components.home.lady-collection-cards' with {
+            position: 5,
+            component: {
+                cards: [
+                    {
+                        title: 'هديتكِ المثالية هنا',
+                        subtitle: 'مجوهرات راقية وهدايا مميزة تناسب جميع المناسبات السعيدة',
+                        image: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=900&auto=format&fit=crop',
+                        btn_text: 'تسوقي المجموعة',
+                        url: '/products'
+                    },
+                    {
+                        title: 'لمسة فخامة تليق بكِ',
+                        subtitle: 'أجمل تشكيلات الموسم بتصاميم حصرية وبريق يخطف الأنظار',
+                        image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=900&auto=format&fit=crop',
+                        btn_text: 'تسوقي المجموعة',
+                        url: '/products'
+                    }
+                ]
+            }
+        } %}
+
+        {# 6. Product Hotspots Lookbook (مجموعة المنتجات بالنقاط التفاعلية) #}
+        {% include 'components.home.lady-product-hotspots' with {
+            position: 6,
+            component: {
+                bg_image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1400&auto=format&fit=crop',
+                hotspots: [
+                    { top: 32, left: 52, title: 'عقد لؤلؤ شوكر فاخر', price: '290', thumb: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=300&auto=format&fit=crop' },
+                    { top: 48, left: 34, title: 'خاتم سوليتير مطلي ذهب عيار 18', price: '180', thumb: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=300&auto=format&fit=crop' },
+                    { top: 68, left: 42, title: 'إسوارة تنس ناعمة', price: '220', thumb: 'https://images.unsplash.com/photo-1611591475155-4286fa7c2e7f?q=80&w=300&auto=format&fit=crop' }
+                ]
+            }
+        } %}
+
+        {# 7. Flash Sale with Live Countdown (عروض بعداد تنازلي) #}
+        {% include 'components.home.lady-countdown-sale' with {
+            position: 7,
+            component: {
+                title: 'عروض استثنائية لفترة محدودة',
+                description: 'اغتنمي الفرصة واستمتعي بخصومات مختارة على أجمل الهدايا والإكسسوارات والعبايات قبل انتهاء العرض.',
+                days: '04',
+                hours: '11',
+                minutes: '30',
+                seconds: '45',
+                btn_text: 'تسوقي العروض الآن',
+                btn_url: '/offers',
+                image_1: 'https://images.unsplash.com/photo-1630019852942-f89202989a59?q=80&w=600&auto=format&fit=crop',
+                image_2: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600&auto=format&fit=crop'
+            }
+        } %}
+
+        {# 8. Special Spotlight Banner (بانر خاص بيضاوي) #}
+        {% include 'components.home.lady-special-banner' with {
+            position: 8,
+            component: {
+                title_right: 'بريق',
+                title_left: 'استثنائي',
+                center_image: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=600&auto=format&fit=crop',
+                bg_image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1200&auto=format&fit=crop',
+                url: '/products'
+            }
+        } %}
+
+        {# 9. Main Offers Banner (بانر عروض رئيسي) #}
+        {% include 'components.home.lady-main-offers' with {
+            position: 9,
+            component: {
+                badge: 'عروض الموسم الفاخرة',
+                title: 'تألقي بأحدث تشكيلات الموسم بخصم يصل إلى 40%',
+                description: 'تشكيلة استثنائية من العبايات والمجوهرات ومستحضرات التجميل المختارة لتمنحك إطلالة فريدة ومتميزة.',
+                btn_text: 'تسوقي العروض الآن',
+                btn_url: '/offers',
+                bg_image: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=1200&auto=format&fit=crop'
+            }
+        } %}
+
+        {# 10. Instagram Feed Showcase (شاهد الانستجرام) #}
+        {% include 'components.home.lady-instagram' with {
+            position: 10,
+            component: {
+                handle: '@lady.official',
+                title: 'شاهدي إطلالات العميلات على انستقرام',
+                images: [
+                    { image: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=500&auto=format&fit=crop', url: 'https://instagram.com' },
+                    { image: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=500&auto=format&fit=crop', url: 'https://instagram.com' },
+                    { image: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=500&auto=format&fit=crop', url: 'https://instagram.com' },
+                    { image: 'https://images.unsplash.com/photo-1630019852942-f89202989a59?q=80&w=500&auto=format&fit=crop', url: 'https://instagram.com' },
+                    { image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=500&auto=format&fit=crop', url: 'https://instagram.com' },
+                    { image: 'https://images.unsplash.com/photo-1611591475155-4286fa7c2e7f?q=80&w=500&auto=format&fit=crop', url: 'https://instagram.com' }
+                ]
+            }
+        } %}
+
+        {# 11. Customer Reviews (آراء وتجارب العميلات) #}
+        {% include 'components.home.lady-testimonials' with {
+            position: 11,
+            component: {
+                title: 'آراء وتجارب العميلات',
+                description: 'نفخر بثقة أكثر من 5,000 عميلة سعيدة اختاروا منتجاتنا لتكون جزءاً من إطلالاتهن الفاخرة.'
+            }
+        } %}
+
+        {# 12. Store Branches (فروعنا ومعارضنا) #}
+        {% include 'components.home.lady-branches' with {
+            position: 12,
+            component: {
+                title: 'فروعنا ومعارضنا الفاخرة'
+            }
+        } %}
+
+        {# 13. Articles & Magazine (المجلة ونقاط الأناقة) #}
+        {% include 'components.home.lady-articles' with {
+            position: 13,
+            component: {
+                title: 'المجلة ونقاط الأناقة'
+            }
+        } %}
+
+        {# 14. FAQ Accordion (الأسئلة الشائعة) #}
+        {% include 'components.home.lady-faq' with {
+            position: 14,
+            component: {
+                badge: 'نحن هنا لمساعدتكِ',
+                title: 'الأسئلة الشائعة',
+                description: 'كل ما تحتاجين معرفته حول الشحن، الطلبات، وسياسات الاسترجاع جمعناه لكِ في مكان واحد.'
+            }
+        } %}
+    </div>
+
+    {# 🎨 Floating Interactive Theme Control Center 🎨 #}
+    <div id="lady-palette-switcher" class="fixed bottom-6 start-6 z-50 bg-white/95 backdrop-blur-md border border-[color:var(--lady-border,#F0EAE3)] shadow-2xl rounded-2xl p-3 flex items-center gap-3 transition-all duration-300 hover:scale-105">
+        <div class="flex items-center gap-1.5 text-xs font-bold text-gray-800 ps-1">
+            <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+            <span>باليت الثيم:</span>
+        </div>
+        <div class="flex items-center gap-2">
+            <button onclick="setLadyPalette('rose')" title="Rose & Blush" class="w-7 h-7 rounded-full bg-[#C4737F] border-2 border-white shadow-sm hover:scale-110 transition-transform focus:ring-2 focus:ring-offset-1 focus:ring-[#C4737F]"></button>
+            <button onclick="setLadyPalette('gold')" title="Silk & Gold" class="w-7 h-7 rounded-full bg-[#1C1917] border-2 border-[#C5A880] shadow-sm hover:scale-110 transition-transform focus:ring-2 focus:ring-offset-1 focus:ring-[#C5A880]"></button>
+            <button onclick="setLadyPalette('mocha')" title="Nude Mocha" class="w-7 h-7 rounded-full bg-[#A37B5C] border-2 border-white shadow-sm hover:scale-110 transition-transform focus:ring-2 focus:ring-offset-1 focus:ring-[#A37B5C]"></button>
+            <button onclick="setLadyPalette('lavender')" title="Soft Lavender" class="w-7 h-7 rounded-full bg-[#93739B] border-2 border-white shadow-sm hover:scale-110 transition-transform focus:ring-2 focus:ring-offset-1 focus:ring-[#93739B]"></button>
+        </div>
+    </div>
 {% endblock %}
+
 {% block scripts %}
     <script defer src="{{ 'home.js' | asset }}"></script>
+    <script>
+        function setLadyPalette(palette) {
+            const root = document.documentElement;
+            if (palette === 'gold') {
+                root.style.setProperty('--color-primary', '#1C1917');
+                root.style.setProperty('--color-primary-dark', '#000000');
+                root.style.setProperty('--color-primary-light', '#F5F3EF');
+                root.style.setProperty('--lady-accent', '#C5A880');
+                root.style.setProperty('--lady-surface', '#FAF8F5');
+                root.style.setProperty('--lady-border', '#EBE5DC');
+            } else if (palette === 'mocha') {
+                root.style.setProperty('--color-primary', '#A37B5C');
+                root.style.setProperty('--color-primary-dark', '#845E42');
+                root.style.setProperty('--color-primary-light', '#FAF7F2');
+                root.style.setProperty('--lady-accent', '#D4B89B');
+                root.style.setProperty('--lady-surface', '#FAF7F2');
+                root.style.setProperty('--lady-border', '#EFE7DE');
+            } else if (palette === 'lavender') {
+                root.style.setProperty('--color-primary', '#93739B');
+                root.style.setProperty('--color-primary-dark', '#74547C');
+                root.style.setProperty('--color-primary-light', '#F7F4F9');
+                root.style.setProperty('--lady-accent', '#BFA4C6');
+                root.style.setProperty('--lady-surface', '#FBF9FC');
+                root.style.setProperty('--lady-border', '#F0E8F3');
+            } else {
+                // Rose & Blush (Default)
+                root.style.setProperty('--color-primary', '#C4737F');
+                root.style.setProperty('--color-primary-dark', '#A3535F');
+                root.style.setProperty('--color-primary-light', '#FAF7F2');
+                root.style.setProperty('--lady-accent', '#E2A9B2');
+                root.style.setProperty('--lady-surface', '#FCFAF8');
+                root.style.setProperty('--lady-border', '#F0EAE3');
+            }
+        }
+    </script>
 {% endblock %}
