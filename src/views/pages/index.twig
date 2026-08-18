@@ -117,9 +117,121 @@
             }
         } %}
 
-        {# 8. Special Spotlight Banner (بانر خاص بيضاوي) #}
+        {# 🌟 8. Master Theme Innovations Hub (معرض ميزات الثيم والابتكارات التفاعلية) 🌟 #}
+        <section class="lady-innovations-hub">
+            <div class="container">
+                <div class="hub-header">
+                    <span class="hub-badge"><i class="sicon-sparkle"></i> تجربة تسوق تفاعلية 360°</span>
+                    <h2>ميزات حصرية ترفع مبيعات متجرك وتثري تجربة عميلاتكِ</h2>
+                    <p>صُممت كل أداة بعناية فائقة لتمنح متجرك الفخامة، المصداقية، وأعلى معدلات التحويل (Conversion Rate).</p>
+                </div>
+
+                <div class="interactive-grid">
+                    {# A. Before & After Beauty Slider #}
+                    <div class="feature-interactive-box">
+                        <div class="feature-head">
+                            <div class="icon-wrap"><i class="sicon-magic-wand"></i></div>
+                            <div>
+                                <h3>مقارنة النتائج التفاعلية (قبل وبعد)</h3>
+                                <span class="tag">للميك اب والعناية بالبشرة</span>
+                            </div>
+                        </div>
+                        <p class="desc">اسحبي المقبض للمقارنة المباشرة وتوضيح فاعلية المنتج في إخفاء المسام وتوحيد لون البشرة:</p>
+                        
+                        <div class="before-after-container" id="ba-slider-1">
+                            <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=800&auto=format&fit=crop" class="ba-img" alt="Before" />
+                            <div class="ba-overlay" id="ba-overlay-1">
+                                <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=800&auto=format&fit=crop" alt="After" />
+                            </div>
+                            <div class="ba-handle" id="ba-handle-1">↔</div>
+                            <span class="ba-label label-before">قبل</span>
+                            <span class="ba-label label-after">بعد</span>
+                        </div>
+                    </div>
+
+                    {# B. Live Gift Card & Ribbon Preview #}
+                    <div class="feature-interactive-box">
+                        <div class="feature-head">
+                            <div class="icon-wrap"><i class="sicon-gift"></i></div>
+                            <div>
+                                <h3>محاكي كارت الإهداء الفاخر</h3>
+                                <span class="tag">تجربة إهداء متكاملة</span>
+                            </div>
+                        </div>
+                        <p class="desc">تكتب العميلة رسالة الإهداء لتظهر فوراً في بطاقة فاخرة مطبوعة مع تغليف البوكس:</p>
+
+                        <div class="gift-card-mockup">
+                            <div class="card-ribbon">🎀 تغليف هدايا ملكي</div>
+                            <div class="gift-text-preview" id="live-gift-text">"أجمل الهدايا لأغلى إنسانة.. كل عام وأنتِ الأجمل والأقرب لقلبي ✨"</div>
+                            <input type="text" class="gift-input-field" placeholder="اكتبي عبارة الإهداء للتجربة..." oninput="document.getElementById('live-gift-text').innerText = this.value || 'اكتبي عبارة الإهداء هنا...'" />
+                        </div>
+                    </div>
+
+                    {# C. Live Fragrance Notes Pyramid #}
+                    <div class="feature-interactive-box">
+                        <div class="feature-head">
+                            <div class="icon-wrap"><i class="sicon-flower"></i></div>
+                            <div>
+                                <h3>الهرم العطري التفاعلي</h3>
+                                <span class="tag">للعطور والبخور الفاخر</span>
+                            </div>
+                        </div>
+                        <p class="desc">استعراض بصري لمكونات العطر ودرجات ثباته وفوحانه بطريقة احترافية تشرح طبقات العطر:</p>
+
+                        <div class="fragrance-pyramid">
+                            <div class="note-level">
+                                <span class="level-badge">قمة العطر (Top)</span>
+                                <span class="level-notes">برغموت إيطالي، ياسمين ناعم، براعم التوت البري</span>
+                            </div>
+                            <div class="note-level">
+                                <span class="level-badge" style="background:#C4737F;">قلب العطر (Heart)</span>
+                                <span class="level-notes">ورد دمشقي فاخر، فانيليا مدغشقر، مسك أبيض</span>
+                            </div>
+                            <div class="note-level">
+                                <span class="level-badge" style="background:#A37B5C;">قاعدة العطر (Base)</span>
+                                <span class="level-notes">خشب الصندل العطري، عنبر ملكي دافئ، باتشولي</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    {# D. Smart Abaya & Ring Fit Calculator #}
+                    <div class="feature-interactive-box">
+                        <div class="feature-head">
+                            <div class="icon-wrap"><i class="sicon-ruler"></i></div>
+                            <div>
+                                <h3>حاسبة المقاس الذكية</h3>
+                                <span class="tag">للعبايات والمجوهرات</span>
+                            </div>
+                        </div>
+                        <p class="desc">تحديد المقاس الدقيق فوراً بناءً على الطول والوزن لتقليل نسبة الاسترجاع وزيادة الثقة:</p>
+
+                        <div class="size-calc-widget">
+                            <div class="calc-inputs">
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-700 mb-1">طولكِ بالسم:</label>
+                                    <input type="number" id="fit-height" value="162" oninput="calculateFit()" />
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-700 mb-1">تفضيل اللبس:</label>
+                                    <select id="fit-style" onchange="calculateFit()">
+                                        <option value="heels">مع كعب عالي</option>
+                                        <option value="flat">مع شوز فلات</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="calc-result-box">
+                                <span>مقاس العباية المثالي لكِ:</span>
+                                <span id="fit-result" class="text-xl font-extrabold text-primary">54</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {# 9. Special Spotlight Banner (بانر خاص بيضاوي) #}
         {% include 'components.home.lady-special-banner' with {
-            position: 8,
+            position: 9,
             component: {
                 title_right: 'بريق',
                 title_left: 'استثنائي',
@@ -129,9 +241,9 @@
             }
         } %}
 
-        {# 9. Main Offers Banner (بانر عروض رئيسي) #}
+        {# 10. Main Offers Banner (بانر عروض رئيسي) #}
         {% include 'components.home.lady-main-offers' with {
-            position: 9,
+            position: 10,
             component: {
                 badge: 'عروض الموسم الفاخرة',
                 title: 'تألقي بأحدث تشكيلات الموسم بخصم يصل إلى 40%',
@@ -142,9 +254,9 @@
             }
         } %}
 
-        {# 10. Instagram Feed Showcase (شاهد الانستجرام) #}
+        {# 11. Instagram Feed Showcase (شاهد الانستجرام) #}
         {% include 'components.home.lady-instagram' with {
-            position: 10,
+            position: 11,
             component: {
                 handle: '@lady.official',
                 title: 'شاهدي إطلالات العميلات على انستقرام',
@@ -159,34 +271,34 @@
             }
         } %}
 
-        {# 11. Customer Reviews (آراء وتجارب العميلات) #}
+        {# 12. Customer Reviews (آراء وتجارب العميلات) #}
         {% include 'components.home.lady-testimonials' with {
-            position: 11,
+            position: 12,
             component: {
                 title: 'آراء وتجارب العميلات',
                 description: 'نفخر بثقة أكثر من 5,000 عميلة سعيدة اختاروا منتجاتنا لتكون جزءاً من إطلالاتهن الفاخرة.'
             }
         } %}
 
-        {# 12. Store Branches (فروعنا ومعارضنا) #}
+        {# 13. Store Branches (فروعنا ومعارضنا) #}
         {% include 'components.home.lady-branches' with {
-            position: 12,
+            position: 13,
             component: {
                 title: 'فروعنا ومعارضنا الفاخرة'
             }
         } %}
 
-        {# 13. Articles & Magazine (المجلة ونقاط الأناقة) #}
+        {# 14. Articles & Magazine (المجلة ونقاط الأناقة) #}
         {% include 'components.home.lady-articles' with {
-            position: 13,
+            position: 14,
             component: {
                 title: 'المجلة ونقاط الأناقة'
             }
         } %}
 
-        {# 14. FAQ Accordion (الأسئلة الشائعة) #}
+        {# 15. FAQ Accordion (الأسئلة الشائعة) #}
         {% include 'components.home.lady-faq' with {
-            position: 14,
+            position: 15,
             component: {
                 badge: 'نحن هنا لمساعدتكِ',
                 title: 'الأسئلة الشائعة',
@@ -195,7 +307,16 @@
         } %}
     </div>
 
-    {# 🎨 Floating Interactive Theme Control Center 🎨 #}
+    {# 🛍️ Live Floating Social Proof Notification Toast #}
+    <div id="lady-live-toast" class="lady-social-proof-toast hidden sm:flex">
+        <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=150&auto=format&fit=crop" class="thumb" alt="Product" />
+        <div class="toast-content text-start">
+            <div class="headline">اشترت منيرة من الرياض "خاتم سوليتير"</div>
+            <div class="meta"><i class="sicon-check-circle"></i> مشترية مؤكدة • قبل دقيقتين</div>
+        </div>
+    </div>
+
+    {# 🎨 Floating Interactive Theme Control Center #}
     <div id="lady-palette-switcher" class="fixed bottom-6 start-6 z-50 bg-white/95 backdrop-blur-md border border-[color:var(--lady-border,#F0EAE3)] shadow-2xl rounded-2xl p-3 flex items-center gap-3 transition-all duration-300 hover:scale-105">
         <div class="flex items-center gap-1.5 text-xs font-bold text-gray-800 ps-1">
             <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
@@ -213,6 +334,7 @@
 {% block scripts %}
     <script defer src="{{ 'home.js' | asset }}"></script>
     <script>
+        // Palette Switcher
         function setLadyPalette(palette) {
             const root = document.documentElement;
             if (palette === 'gold') {
@@ -246,5 +368,45 @@
                 root.style.setProperty('--lady-border', '#F0EAE3');
             }
         }
+
+        // Fit Calculator
+        function calculateFit() {
+            const height = parseInt(document.getElementById('fit-height').value) || 160;
+            const style = document.getElementById('fit-style').value;
+            let size = 52;
+            if (height >= 170) size = 58;
+            else if (height >= 165) size = 56;
+            else if (height >= 158) size = 54;
+            else if (height >= 152) size = 52;
+            else size = 50;
+
+            if (style === 'heels' && height < 170) {
+                size += 2;
+            }
+            document.getElementById('fit-result').innerText = size;
+        }
+
+        // Before After Interactive Drag
+        document.addEventListener('DOMContentLoaded', () => {
+            const slider = document.getElementById('ba-slider-1');
+            const overlay = document.getElementById('ba-overlay-1');
+            const handle = document.getElementById('ba-handle-1');
+            if (slider && overlay && handle) {
+                const moveSlider = (e) => {
+                    const rect = slider.getBoundingClientRect();
+                    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+                    let pos = ((clientX - rect.left) / rect.width) * 100;
+                    pos = Math.max(5, Math.min(95, pos));
+                    overlay.style.width = pos + '%';
+                    handle.style.left = pos + '%';
+                };
+
+                let isDown = false;
+                slider.addEventListener('mousedown', () => isDown = true);
+                window.addEventListener('mouseup', () => isDown = false);
+                slider.addEventListener('mousemove', (e) => { if (isDown) moveSlider(e); });
+                slider.addEventListener('touchmove', moveSlider);
+            }
+        });
     </script>
 {% endblock %}
