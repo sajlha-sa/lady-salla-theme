@@ -1,17 +1,21 @@
 
 .store-footer {
-  @apply relative bg-darker text-white mt-8 sm:mt-16;
+  @apply relative bg-[#1C1917] text-white mt-12 sm:mt-20;
 
   a{
-    @apply transition-opacity hover:opacity-75;
+    @apply transition-all text-gray-300;
+    text-decoration: none;
+    &:hover {
+      color: #ffffff;
+    }
   }
 
   &__inner{
-    @apply bg-dark py-8 lg:py-16 border-b border-dashed border-b-white/10;
+    @apply py-10 lg:py-16 border-b border-white/10;
   }  
 
   h3{
-    @apply text-lg font-bold mb-3 lg:mb-5;
+    @apply text-base lg:text-lg font-bold mb-4 text-white;
   }
 
   .social-link {

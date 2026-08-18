@@ -296,17 +296,44 @@ salla-menu[topnav]:not(.hydrated) {
 
 /* Lady Header Enhancements */
 .lady-header {
+  width: 100%;
+  position: relative;
+  z-index: 50;
+
   .lady-announcement-bar {
-    background: var(--color-primary);
+    width: 100%;
+    display: block;
+    background: var(--color-primary, #C4737F);
     color: var(--color-primary-reverse, #ffffff);
     font-weight: 500;
     letter-spacing: 0.02em;
+    padding: 0.5rem 1rem;
+    text-align: center;
+  }
+
+  .top-navbar {
+    width: 100%;
+    background: var(--lady-surface, #FCFAF8);
+    border-bottom: 1px solid var(--lady-border, #F0EAE3);
   }
 
   .main-nav-container {
-    background-color: rgba(255, 255, 255, 0.95);
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.96);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     transition: all 0.3s ease;
+
+    .navbar-brand {
+      display: inline-flex;
+      align-items: center;
+      img {
+        max-height: 48px;
+        max-width: 160px;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+      }
+    }
   }
 }

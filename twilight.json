@@ -390,6 +390,7 @@
                 "ar": "واجهة ترويجية - ليدي"
             },
             "icon": "sicon-image-carousel",
+            "image": "https://i.ibb.co/QvZmF4b9/Frame-99-webp.webp",
             "path": "home.lady-hero-promo",
             "fields": [
                 {
@@ -440,6 +441,7 @@
                 "ar": "تصنيفات المتجر - ليدي"
             },
             "icon": "sicon-layout-grid",
+            "image": "https://i.ibb.co/GvCHJk68/Frame-1984077976-webp.webp",
             "path": "home.lady-categories-showcase",
             "fields": [
                 {
@@ -464,6 +466,7 @@
                 "ar": "قوس ترويجي + شريط منتجات - ليدي"
             },
             "icon": "sicon-sparkle",
+            "image": "https://i.ibb.co/tMZ167ns/Component-39-1-webp.webp",
             "path": "home.lady-arch-promo",
             "fields": [
                 {
@@ -501,6 +504,7 @@
                 "ar": "بطاقات المجموعات - ليدي"
             },
             "icon": "sicon-newspaper",
+            "image": "https://i.ibb.co/tpbng8fC/Frame-103-webp.webp",
             "path": "home.lady-collection-cards",
             "fields": [
                 {
@@ -556,6 +560,7 @@
                 "ar": "مجموعة المنتجات (نقاط تفاعلية) - ليدي"
             },
             "icon": "sicon-tag",
+            "image": "https://i.ibb.co/My31zbjf/Frame-1984078000-1-webp.webp",
             "path": "home.lady-product-hotspots",
             "fields": [
                 {
@@ -574,6 +579,7 @@
                 "ar": "عروض بعداد تنازلي - ليدي"
             },
             "icon": "sicon-history",
+            "image": "https://i.ibb.co/M5VKrgWL/Frame-82-1-webp.webp",
             "path": "home.lady-countdown-sale",
             "fields": [
                 {
@@ -628,6 +634,7 @@
                 "ar": "شريط متحرك (ماركيه) - ليدي"
             },
             "icon": "sicon-marquee",
+            "image": "https://i.ibb.co/23XmwV1h/image-webp.webp",
             "path": "home.lady-marquee",
             "fields": []
         },
@@ -638,6 +645,7 @@
                 "ar": "بانر خاص - ليدي"
             },
             "icon": "sicon-image",
+            "image": "https://i.ibb.co/1c2Qxwr/Frame-1984077990-webp.webp",
             "path": "home.lady-special-banner",
             "fields": [
                 {
@@ -668,6 +676,7 @@
                 "ar": "أسئلة شائعة - ليدي"
             },
             "icon": "sicon-chat-conversation",
+            "image": "https://i.ibb.co/Y4fdwL3h/Container-webp.webp",
             "path": "home.lady-faq",
             "fields": [
                 {
@@ -698,6 +707,7 @@
                 "ar": "بانر عروض رئيسي - ليدي"
             },
             "icon": "sicon-tag-ribbon",
+            "image": "https://i.ibb.co/Q3z2fxqb/Frame-2147223573-webp.webp",
             "path": "home.lady-main-offers",
             "fields": [
                 {
@@ -747,6 +757,7 @@
                 "ar": "شاهد الانستجرام - ليدي"
             },
             "icon": "sicon-instagram",
+            "image": "https://i.ibb.co/fTk7jgz/Frame-2147223612-webp.webp",
             "path": "home.lady-instagram",
             "fields": [
                 {
@@ -770,6 +781,7 @@
                 "ar": "آراء العملاء - ليدي"
             },
             "icon": "sicon-star2",
+            "image": "https://i.ibb.co/TM8sX3JR/Frame-2147223555-webp.webp",
             "path": "home.lady-testimonials",
             "fields": [
                 {
@@ -794,6 +806,7 @@
                 "ar": "فروعنا - ليدي"
             },
             "icon": "sicon-store",
+            "image": "https://i.ibb.co/pvD1x6v3/Screenshot-2026-05-21-160442-webp.webp",
             "path": "home.lady-branches",
             "fields": [
                 {
@@ -811,6 +824,7 @@
                 "ar": "مقالات - ليدي"
             },
             "icon": "sicon-newspaper",
+            "image": "https://i.ibb.co/4R5rbpLD/Frame-2147223649-webp.webp",
             "path": "home.lady-articles",
             "fields": [
                 {
